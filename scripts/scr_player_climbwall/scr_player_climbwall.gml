@@ -1,0 +1,34 @@
+function scr_player_climbwall(){
+	scr_input();
+	vsp = -wallspeed;
+    sprite_index = spr_player_climbwall;
+	
+    if (wallspeed < 20)
+		wallspeed += 0.15;
+	
+	if (!place_meeting_collision(x + xscale, y, obj_solid) && wallspeed > 0) {
+		vsp = 0;
+		if (wallspeed < 6)
+			wallspeed = 6;
+		
+		if (wallspeed >= 6 && wallspeed < 12) {
+			state = states.mach2;
+			movespeed = wallspeed;
+			exit;
+		}
+		else if (wallspeed > 12) {
+			state = states.mach3;
+			movespeed = wallspeed;
+			exit;
+		}
+		hsp = wallspeed * xscale;
+	}
+	
+	if (keyboard_check_pressed(ord("Z"))) {
+		movespeed = 10;
+		vsp = -11;
+		xscale *= -1
+		sprite_index = spr_player_walljumpstart;
+		state = states.mach2;
+	}
+}

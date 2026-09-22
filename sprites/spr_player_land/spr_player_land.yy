@@ -64,7 +64,7 @@
     },
     "name":"spr_player_land",
     "playback":1,
-    "playbackSpeed":0.35,
+    "playbackSpeed":1.0,
     "playbackSpeedType":1,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",

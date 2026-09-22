@@ -14,6 +14,14 @@ switch (state) {
 	case states.mach3:
 		scr_player_mach3();
 		break;
+	
+	case states.climbwall:
+		scr_player_climbwall();
+		break;
+	
+	case states.tumble:
+		scr_player_tumble();
+		break;
 }
 
 mask_index = spr_player_mask;	

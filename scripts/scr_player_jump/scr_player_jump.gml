@@ -1,7 +1,5 @@
 function scr_player_jump() {
-	if keyboard_check_direct(vk_left) move = -1;
-	else if keyboard_check_direct(vk_right) move = 1;
-	else move = 0;
+	scr_input();
 	
 	hsp = movespeed;
 	
@@ -17,5 +15,7 @@ function scr_player_jump() {
 	}
 	
 	if (sprite_index == spr_player_jump && floor(image_index) == (image_number - 1))
-		sprite_index = spr_player_fall
+		sprite_index = spr_player_fall;
+	
+	image_speed = 0.35;
 }

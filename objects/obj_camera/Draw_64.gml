@@ -11,6 +11,7 @@ var devWindow = []
         array_push(devWindow, string("Player move speed: {0}", obj_player.hsp));
         array_push(devWindow, string("Player state: {0}", obj_player.state));
         array_push(devWindow, string("Player sprite: {0}", sprite_get_name(obj_player.sprite_index)));
+		
     }
     
     draw_set_halign(fa_left);

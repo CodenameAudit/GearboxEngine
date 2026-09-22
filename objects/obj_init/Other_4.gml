@@ -1,2 +1,3 @@
 scr_init();
-room_goto(rm_gutter);
+scr_utilty();
+scr_gotoRoom(rm_gutter)

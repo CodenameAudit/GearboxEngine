@@ -2,6 +2,7 @@ function scr_player_mach2() {
 	var _maxmovespeed = 12;
 	var _slopeacel = 0.1;
 	var _accel = 0.1;
+	var _sprBonus = [spr_player_secondjump2, spr_player_walljumpend, spr_player_rollgetup]
 	
 	hsp = movespeed * xscale;
 
@@ -19,6 +20,26 @@ function scr_player_mach2() {
 	
 	if (keyboard_check_direct(ord("Z")) && grounded) {
 		vsp = -11;
+		sprite_index = spr_player_secondjump1;
+		image_index = 0;
+	}
+	
+	if (!grounded && place_meeting_collision(x + hsp, y, obj_solid)) {
+		if (wallspeed < 1)
+			wallspeed = 1;
+		else wallspeed = movespeed;
+		
+		state = states.climbwall;
+		exit;
+	}
+	else if (grounded && (place_meeting_collision(x + hsp, y, obj_solid))) {
+		//Bump Code Goes Here
+	}
+	
+	if (keyboard_check_direct(vk_down)) {
+		state = states.tumble
+		sprite_index = spr_player_machroll;
+		image_index = 0;
 	}
 	
 	if (!keyboard_check_direct(vk_shift) && grounded) {
@@ -27,6 +48,28 @@ function scr_player_mach2() {
 		image_index = 0;
 	}
 	
-	if (sprite_index == spr_player_mach1 && floor(image_index) == (image_number - 1))
-		sprite_index = spr_player_mach2;
+	if (grounded && array_contains(_sprBonus, sprite_index)) {
+		if (abs(hsp) < 6)
+			sprite_index = spr_player_mach2;
+		else sprite_index = spr_player_mach1;
+	}
+	
+	if (floor(image_index) == (image_number - 1)) {
+		switch (sprite_index) {
+			case spr_player_mach1:
+			case spr_player_climbwall:
+				sprite_index = spr_player_mach2;
+				break;
+			
+			case spr_player_secondjump1:
+				sprite_index = spr_player_secondjump2;
+				break;
+			
+			case spr_player_walljumpstart:
+				sprite_index = spr_player_walljumpend;
+				break;
+		}
+	}
+	
+	image_speed = abs(hsp) / 15;
 }

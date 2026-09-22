@@ -1,7 +1,5 @@
 function scr_player_normal() {
-	if keyboard_check_direct(vk_left) move = -1;
-	else if keyboard_check_direct(vk_right) move = 1;
-	else move = 0;
+	scr_input();
 	
 	hsp = movespeed;
 	
@@ -43,4 +41,6 @@ function scr_player_normal() {
 	
 	if (sprite_index == spr_player_land && floor(image_index) == (image_number - 1))
 		sprite_index = spr_player_idle
+	
+	image_speed = 0.35;
 }

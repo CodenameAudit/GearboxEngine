@@ -16,6 +16,25 @@ function scr_player_mach3() {
 		exit;
 	}
 	
+	if (!grounded && place_meeting_collision(x + hsp, y, obj_solid)) {
+		if (wallspeed < 1)
+			wallspeed = 1;
+		else wallspeed = movespeed;
+		
+		state = states.climbwall;
+		exit;
+	}
+	else if (grounded && (place_meeting_collision(x + hsp, y, obj_solid))) {
+		//Bump Code Goes Here
+	}
+	
+	if (keyboard_check_direct(vk_down)) {
+		state = states.tumble
+		sprite_index = spr_player_machroll;
+		image_index = 0;
+		exit;
+	}
+	
 	if (!keyboard_check_direct(vk_shift) && grounded) {
 		state = states.normal;
 		sprite_index = spr_player_idle;
@@ -27,5 +46,12 @@ function scr_player_mach3() {
 		
 	if (!array_contains(_machSpr, sprite_index)) {
 		sprite_index = spr_player_mach3	
+	}
+	
+	
+	switch (sprite_index) {	
+		default:
+			image_speed = 0.4;
+			break;
 	}
 }
