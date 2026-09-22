@@ -1,0 +1,1 @@
+global.collectiblecount += 100

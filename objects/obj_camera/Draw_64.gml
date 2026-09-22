@@ -3,6 +3,8 @@ var devWindow = []
     array_push(devWindow, string("FPS: {0}", fps));
     array_push(devWindow, string("ROOM: {0}", room_get_name(room)));
     array_push(devWindow, string("Real FPS: {0}", fps_real));
+	array_push(devWindow, string("Score: {0}", global.collectiblecount));
+	
     
     if (instance_exists(obj_player))
     {
@@ -28,7 +30,7 @@ var devWindow = []
     }
     
     var _x = 20;
-    var _y = 200 - _height;
+    var _y = 220 - _height;
     draw_rectangle(_x - 2, _y - 2, _x + _width + 2, _y + _height + 2, false);
     draw_set_alpha(0.85);
     draw_set_color(c_white);
