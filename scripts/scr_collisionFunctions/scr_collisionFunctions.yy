@@ -6,7 +6,7 @@
   "name":"scr_collisionFunctions",
   "parent":{
     "name":"Important Scripts",
-    "path":"folders/Scripts/Unown Collisions/Important Scripts.yy",
+    "path":"folders/Sprites/Scripts/Unown Collisions/Important Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

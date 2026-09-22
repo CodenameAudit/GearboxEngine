@@ -6,7 +6,7 @@
   "name":"scr_mathFunctions",
   "parent":{
     "name":"Misc Scripts",
-    "path":"folders/Scripts/Unown Collisions/Misc Scripts.yy",
+    "path":"folders/Sprites/Scripts/Unown Collisions/Misc Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
