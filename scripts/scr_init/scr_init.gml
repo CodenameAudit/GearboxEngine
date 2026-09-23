@@ -1,6 +1,5 @@
-function scr_init(){
-	global.key_left = false;
-	global.key_right = false;
+function scr_init() {
+	global.collect = 0;
 	global.savedState = -4;
 	global.savedHsp = 0;
 	global.savedMovespeed = 0;

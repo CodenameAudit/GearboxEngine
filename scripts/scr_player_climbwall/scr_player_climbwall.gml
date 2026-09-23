@@ -6,7 +6,7 @@ function scr_player_climbwall(){
     if (wallspeed < 20)
 		wallspeed += 0.15;
 	
-	if (!place_meeting_collision(x + xscale, y, obj_solid) && wallspeed > 0) {
+	if (!place_meeting(x + xscale, y, obj_solid) && wallspeed > 0) {
 		vsp = 0;
 		if (wallspeed < 6)
 			wallspeed = 6;
@@ -38,4 +38,5 @@ function scr_player_climbwall(){
 		sprite_index = spr_player_walljumpstart;
 		state = states.mach2;
 	}
+	image_speed = 0.35;
 }

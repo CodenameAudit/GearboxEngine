@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Unown Collision",
-    "path":"folders/Sprites/Unown Collision.yy",
+    "name":"Collision",
+    "path":"folders/Sprites/Debug/Collision.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

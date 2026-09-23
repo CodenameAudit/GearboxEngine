@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Collision",
-    "path":"folders/Objects/Unown Collisions/Collision.yy",
+    "path":"folders/Objects/Room Structure/Collision.yy",
   },
   "parentObjectId":{
     "name":"par_collision",

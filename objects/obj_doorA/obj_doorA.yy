@@ -6,8 +6,8 @@
   "name":"obj_doorA",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Warps",
+    "path":"folders/Objects/Room Structure/Warps.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_doorA",
+    "path":"sprites/spr_doorA/spr_doorA.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

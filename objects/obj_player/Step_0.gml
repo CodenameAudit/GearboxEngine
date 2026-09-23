@@ -32,12 +32,18 @@ switch (state) {
 		break;
 }
 
-mask_index = spr_player_mask;	
+var _crouchStates = [states.tumble]
+if (array_contains(_crouchStates, state))
+	mask_index = spr_crouchmask;	
+else mask_index = spr_player_mask;	
 
 switch (state) {
 	default:
 		grav = 0.5;
 }
+
+if (y > room_height)
+	scr_gotoRoom(room);
 
 image_xscale = xscale;
 scr_collision();

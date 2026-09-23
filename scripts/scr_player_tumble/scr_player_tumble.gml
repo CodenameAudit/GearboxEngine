@@ -31,7 +31,7 @@ function scr_player_tumble() {
 				sprite_index = spr_player_mach2;
 			break;
 	}
-	if (grounded && !keyboard_check_direct(vk_down)) {
+	if (!keyboard_check_direct(vk_down) && !place_meeting(x, y - 32, obj_solid) && grounded) {
 		if (movespeed >= 12)
 			state = states.mach3;
 		else
