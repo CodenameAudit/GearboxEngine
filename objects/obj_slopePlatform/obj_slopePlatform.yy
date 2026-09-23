@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_unownSlopePlatform",
-    "path":"sprites/spr_unownSlopePlatform/spr_unownSlopePlatform.yy",
+    "name":"spr_slopePlatform",
+    "path":"sprites/spr_slopePlatform/spr_slopePlatform.yy",
   },
   "spriteMaskId":null,
   "visible":true,

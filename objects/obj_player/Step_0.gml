@@ -7,6 +7,10 @@ switch (state) {
 		scr_player_jump();
 		break;
 	
+	case states.titlescreen:
+		scr_player_titlescreen();
+		break;
+	
 	case states.mach2:
 		scr_player_mach2();
 		break;

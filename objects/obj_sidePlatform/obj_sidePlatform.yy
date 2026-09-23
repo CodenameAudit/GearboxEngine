@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_unownSidePlatform",
-    "path":"sprites/spr_unownSidePlatform/spr_unownSidePlatform.yy",
+    "name":"spr_sidePlatform",
+    "path":"sprites/spr_sidePlatform/spr_sidePlatform.yy",
   },
   "spriteMaskId":null,
   "visible":true,

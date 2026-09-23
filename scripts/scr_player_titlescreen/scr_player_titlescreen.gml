@@ -4,4 +4,12 @@ function scr_player_titlescreen() {
 	else move = 0;
 	hsp = 0;
 	vsp = 0;
+	
+	if (floor(image_index) == (image_number - 1))
+    {
+        image_speed = 0;
+        image_index = image_number - 1;
+    }
+	
+	image_speed = 0.35;
 }

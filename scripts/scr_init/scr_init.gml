@@ -10,6 +10,7 @@ function scr_init(){
 	enum states {
 		normal,
 		jump,
+		titlescreen,
 		mach2,
 		mach3,
 		climbwall,

@@ -30,9 +30,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_unownMovingPlatformTrigger",
-    "path":"sprites/spr_unownMovingPlatformTrigger/spr_unownMovingPlatformTrigger.yy",
+    "name":"spr_movingPlatformTrigger",
+    "path":"sprites/spr_movingPlatformTrigger/spr_movingPlatformTrigger.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

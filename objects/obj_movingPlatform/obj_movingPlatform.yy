@@ -37,12 +37,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_unownMovingPlatform",
-    "path":"sprites/spr_unownMovingPlatform/spr_unownMovingPlatform.yy",
+    "name":"spr_movingPlatform",
+    "path":"sprites/spr_movingPlatform/spr_movingPlatform.yy",
   },
   "spriteMaskId":{
-    "name":"spr_unownMovingPlatform",
-    "path":"sprites/spr_unownMovingPlatform/spr_unownMovingPlatform.yy",
+    "name":"spr_movingPlatform",
+    "path":"sprites/spr_movingPlatform/spr_movingPlatform.yy",
   },
   "visible":true,
 }

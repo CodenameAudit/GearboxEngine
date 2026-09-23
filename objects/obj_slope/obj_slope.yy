@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_unownSlope",
-    "path":"sprites/spr_unownSlope/spr_unownSlope.yy",
+    "name":"spr_slope",
+    "path":"sprites/spr_slope/spr_slope.yy",
   },
   "spriteMaskId":null,
   "visible":true,
