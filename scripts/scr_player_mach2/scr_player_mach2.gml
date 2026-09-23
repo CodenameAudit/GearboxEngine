@@ -4,6 +4,7 @@ function scr_player_mach2() {
 	var _accel = 0.1;
 	var _sprBonus = [spr_player_secondjump2, spr_player_walljumpend, spr_player_rollgetup]
 	
+	scr_movePlayer();
 	hsp = movespeed * xscale;
 
 	if (grounded) {
@@ -42,10 +43,19 @@ function scr_player_mach2() {
 		image_index = 0;
 	}
 	
+	
 	if (!keyboard_check_direct(vk_shift) && grounded) {
-		state = states.normal;
-		sprite_index = spr_player_idle;
+		state = states.machslide;
+		sprite_index = spr_player_machslidestart;
 		image_index = 0;
+		exit;
+	}
+	
+	if (move != 0 && move != xscale && grounded) {
+		sprite_index = spr_player_machslideboost;
+		image_index = 0;
+		state = states.machslide;
+		exit;
 	}
 	
 	if (grounded && array_contains(_sprBonus, sprite_index)) {

@@ -9,3 +9,4 @@ state = states.normal;
 savedState = -4;
 savedHsp = 0;
 scr_collision_init()
+scr_utilty()

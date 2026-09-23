@@ -1,5 +1,5 @@
 function scr_player_climbwall(){
-	scr_input();
+	scr_movePlayer();
 	vsp = -wallspeed;
     sprite_index = spr_player_climbwall;
 	

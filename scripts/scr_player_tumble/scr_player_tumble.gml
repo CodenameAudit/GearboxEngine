@@ -1,5 +1,5 @@
 function scr_player_tumble() {
-	scr_input();
+	scr_movePlayer();
 	hsp = xscale * movespeed
 	
 	if (!grounded && sprite_index != spr_player_dive) {

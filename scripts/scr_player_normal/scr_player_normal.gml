@@ -1,5 +1,5 @@
 function scr_player_normal() {
-	scr_input();
+	scr_movePlayer();
 	
 	hsp = movespeed;
 	

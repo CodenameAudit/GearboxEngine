@@ -13,7 +13,8 @@ function scr_init(){
 		mach2,
 		mach3,
 		climbwall,
-		tumble
+		tumble,
+		machslide
 	}
 	
 	with (obj_player) {

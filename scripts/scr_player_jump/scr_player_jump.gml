@@ -1,5 +1,5 @@
 function scr_player_jump() {
-	scr_input();
+	scr_movePlayer();
 	
 	hsp = movespeed;
 	

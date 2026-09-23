@@ -22,6 +22,10 @@ switch (state) {
 	case states.tumble:
 		scr_player_tumble();
 		break;
+	
+	case states.machslide:
+		scr_player_machslide();
+		break;
 }
 
 mask_index = spr_player_mask;	
