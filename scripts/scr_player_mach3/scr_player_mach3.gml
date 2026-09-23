@@ -9,7 +9,7 @@ function scr_player_mach3() {
 	if movespeed != _maxmovespeed
 		movespeed += _accel
 	
-	if (keyboard_check_direct(ord("Z")) && grounded) {
+	if (keyboard_check_pressed(ord("Z")) && grounded) {
 		vsp = -11;
 		sprite_index = spr_player_mach3jump;
 		image_index = 0;

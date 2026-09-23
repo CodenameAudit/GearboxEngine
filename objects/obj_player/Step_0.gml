@@ -32,4 +32,4 @@ switch (state) {
 }
 
 image_xscale = xscale;
-scr_collision()
+scr_collision();

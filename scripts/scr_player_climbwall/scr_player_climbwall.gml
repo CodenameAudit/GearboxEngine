@@ -13,6 +13,7 @@ function scr_player_climbwall(){
 		
 		if (wallspeed >= 6 && wallspeed < 12) {
 			state = states.mach2;
+			sprite_index = spr_player_mach2;
 			movespeed = wallspeed;
 			exit;
 		}
@@ -22,6 +23,12 @@ function scr_player_climbwall(){
 			exit;
 		}
 		hsp = wallspeed * xscale;
+	}
+	
+	if (!keyboard_check_direct(vk_shift)) {
+		state = states.jump;
+		sprite_index = spr_player_fall;
+		image_index = 0;
 	}
 	
 	if (keyboard_check_pressed(ord("Z"))) {

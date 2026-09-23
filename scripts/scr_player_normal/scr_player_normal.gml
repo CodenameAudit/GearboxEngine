@@ -9,7 +9,7 @@ function scr_player_normal() {
 	}
 	else movespeed = 0;
 	
-	if (keyboard_check_direct(ord("Z")) && grounded) {
+	if (keyboard_check_pressed(ord("Z")) && grounded) {
 		vsp = -11;
 		state = states.jump;
 		sprite_index = spr_player_jump;

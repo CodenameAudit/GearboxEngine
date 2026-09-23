@@ -18,7 +18,7 @@ function scr_player_mach2() {
 		}
 	}
 	
-	if (keyboard_check_direct(ord("Z")) && grounded) {
+	if (keyboard_check_pressed(ord("Z")) && grounded) {
 		vsp = -11;
 		sprite_index = spr_player_secondjump1;
 		image_index = 0;

@@ -3,12 +3,12 @@ function scr_player_tumble() {
 	hsp = xscale * movespeed
 	
 	if (!grounded && sprite_index != spr_player_dive) {
-		vsp = 13;
+		vsp = 10;
 	    sprite_index = spr_player_dive;
 	}
 	
-	if (sprite_index == spr_player_dive && vsp < 13)
-        vsp = 13;
+	if (sprite_index == spr_player_dive && vsp < 10)
+        vsp = 10;
 	
 	if (grounded && sprite_index == spr_player_dive)
     {
