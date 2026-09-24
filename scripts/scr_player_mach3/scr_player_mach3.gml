@@ -34,8 +34,13 @@ function scr_player_mach3() {
 		state = states.climbwall;
 		exit;
 	}
-	else if (grounded && (place_meeting(x + hsp, y, obj_solid))) {
-		//Bump Code Goes Here
+	else if (grounded && (place_meeting(x + hsp, y - 16, obj_solid))) {
+		sprite_index = spr_player_mach3hitwall;
+		image_index = 0;
+		hsp = 6 * -xscale;
+		vsp = -6;
+		state = states.bump;
+		exit;
 	}
 	
 	if (keyboard_check_direct(vk_down)) {

@@ -30,6 +30,11 @@ switch (state) {
 	case states.machslide:
 		scr_player_machslide();
 		break;
+		
+	case states.bump:
+		scr_player_bump();
+		break;
+		
 }
 
 var _crouchStates = [states.tumble]

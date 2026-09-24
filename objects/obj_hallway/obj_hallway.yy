@@ -10,8 +10,8 @@
   "name":"obj_hallway",
   "overriddenProperties":[],
   "parent":{
-    "name":"Room Structure",
-    "path":"folders/Objects/Room Structure.yy",
+    "name":"Warps",
+    "path":"folders/Objects/Room Structure/Warps.yy",
   },
   "parentObjectId":null,
   "persistent":false,

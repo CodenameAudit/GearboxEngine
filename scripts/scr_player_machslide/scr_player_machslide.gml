@@ -40,6 +40,13 @@ function scr_player_machslide() {
 			image_index = 0;
 			exit;
 		}
+		
+		if (grounded && (place_meeting(x + hsp, y - 16, obj_solid))) {
+		sprite_index = spr_player_wallsplat;
+		image_index = 0;
+		state = states.bump;
+		exit;
+	}
 	}
 	
 	image_speed = 0.35;

@@ -19,6 +19,13 @@ function scr_player_tumble() {
 	if (movespeed <= 2)
 		state = states.normal;
 	
+	if (grounded && (place_meeting(x + hsp, y - 1, obj_solid))) {
+		sprite_index = spr_player_wallsplat;
+		image_index = 0;
+		state = states.bump;
+		exit;
+	}
+	
 	switch (sprite_index) {
 		case spr_player_secondjump1:
 		case spr_player_secondjump2:
