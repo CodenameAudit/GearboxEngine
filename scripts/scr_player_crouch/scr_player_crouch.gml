@@ -1,0 +1,39 @@
+function scr_player_crouch() {
+	scr_movePlayer();
+	hsp = movespeed;
+	var _nonwdawd = [spr_player_crouchjump, spr_player_crouchfall]
+	
+	if move != 0 && !place_meeting(((x + hsp) * move), y, obj_solid){
+		movespeed = 4 * move
+		xscale = move
+	}
+	else movespeed = 0;
+	
+	if (keyboard_check_pressed(ord("Z")) && grounded) {
+		vsp = -8;
+		sprite_index = spr_player_crouchjump;
+		image_index = 0;
+		exit;
+	}
+	
+	if (!keyboard_check_direct(vk_down) && grounded) {		
+		sprite_index = spr_player_idle;
+		image_index = 0;
+		state = states.normal;
+		exit;
+	}
+	
+	if (animationEnd() && sprite_index == spr_player_crouchjump)
+		sprite_index = spr_player_crouchfall;
+	
+	if (grounded && sprite_index == spr_player_crouchfall)
+		sprite_index = spr_player_crouch;
+	
+	if (!array_contains(_nonwdawd, sprite_index)) {
+		if (abs(hsp) != 0)
+			sprite_index = spr_player_crawl;
+		else sprite_index = spr_player_crouch;
+	}
+	
+	image_speed = 0.45;
+}

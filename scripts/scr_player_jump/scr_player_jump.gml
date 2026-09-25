@@ -11,7 +11,9 @@ function scr_player_jump() {
 	
 	if (grounded) {
 		state = states.normal
-		sprite_index = spr_player_land;
+		if (move != 0)
+			sprite_index = spr_player_land2;
+		else sprite_index = spr_player_land;
 	}
 	
 	if (array_contains(_spriteShit, sprite_index) && animationEnd())

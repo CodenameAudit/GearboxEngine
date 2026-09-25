@@ -23,6 +23,13 @@ function scr_player_normal() {
 		exit;
 	}
 	
+	if (keyboard_check_pressed(vk_down) && grounded) {		
+		sprite_index = spr_player_mach1;
+		image_index = 0;
+		state = states.crouch;
+		exit;
+	}
+	
 	if (keyboard_check_direct(vk_shift) && grounded) {
 		if (movespeed < 6)
 			movespeed = 6;
@@ -33,13 +40,13 @@ function scr_player_normal() {
 		exit;
 	}
 	
-	if (sprite_index != spr_player_land) {
+	if (sprite_index != spr_player_land && sprite_index != spr_player_land2) {
 		if (abs(hsp) != 0)
 			sprite_index = spr_player_move;
 		else sprite_index = spr_player_idle;
 	}
 	
-	if (sprite_index == spr_player_land && animationEnd())
+	if ((sprite_index == spr_player_land || sprite_index == spr_player_land2) && animationEnd())
 		sprite_index = spr_player_idle
 	
 	scr_do_grab();

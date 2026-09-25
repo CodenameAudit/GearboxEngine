@@ -20,7 +20,8 @@ function scr_init() {
 		uppercut,
 		noclip,
 		enterWarp,
-		taunt
+		taunt,
+		crouch
 	}
 	
 	with (obj_player) {

@@ -55,9 +55,12 @@ switch (state) {
 		scr_player_taunt();
 		break;
 	
+	case states.crouch:
+		scr_player_crouch();
+		break;
 }
 
-var _crouchStates = [states.tumble]
+var _crouchStates = [states.crouch, states.tumble]
 if (array_contains(_crouchStates, state))
 	mask_index = spr_crouchmask;	
 else mask_index = spr_player_mask;	
