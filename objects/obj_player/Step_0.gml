@@ -64,9 +64,5 @@ if (y > room_height)
 if (ladderBuffer != 0)
 	ladderBuffer--;	
 
-if ((state == states.normal || state == states.jump || state == states.uppercut) && place_meeting(x, y + 3, obj_ladder) && ladderBuffer <= 0 && (keyboard_check_direct(vk_up) || keyboard_check_direct(vk_down))) {
-	state = states.ladder
-}
-
 image_xscale = xscale;
 scr_collision();

@@ -44,7 +44,7 @@ function instance_place_list_collision(xx, yy, exclude = Exclude.NONE, list = un
 			collided += instance_place_list_slopePlatform(xx, yy, list);		
 		}
 	}
-	if (check_platforms) { // Semisolid Collisions
+	if (check_platforms && obj_player.state != states.ladder) { // Semisolid Collisions
 		collided += instance_place_list_platform(xx, yy, list);
 		collided += instance_place_list_sidePlatform(xx, yy, list);
 	}

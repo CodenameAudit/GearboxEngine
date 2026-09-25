@@ -34,7 +34,7 @@ function scr_player_normal() {
 	}
 	
 	if (sprite_index != spr_player_land) {
-		if (movespeed != 0)
+		if (abs(hsp) != 0)
 			sprite_index = spr_player_move;
 		else sprite_index = spr_player_idle;
 	}

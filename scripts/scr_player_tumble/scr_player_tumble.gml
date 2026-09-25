@@ -19,7 +19,7 @@ function scr_player_tumble() {
 	if (movespeed <= 2)
 		state = states.normal;
 	
-	if (place_meeting(x + hsp, y - 6, obj_solid)) {
+	if (place_meeting(x + hsp, y - 10, obj_solid)) {
 		sprite_index = spr_player_wallsplat;
 		image_index = 0;
 		state = states.bump;
