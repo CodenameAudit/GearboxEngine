@@ -1,51 +1,58 @@
-function scr_utilty(){
-	function scr_gotoRoom(arg0) {
-		with (obj_player) {
-			global.savedState = state;
-			global.savedHsp = hsp;
-			global.savedMovespeed = movespeed;
-			global.savedXscale = xscale;
+function scr_gotoRoom(arg0) {
+	with (obj_player) {
+		global.savedState = state;
+	global.savedHsp = hsp;
+	global.savedMovespeed = movespeed;
+	global.savedXscale = xscale;
+	}
+	room_goto(arg0);
+	instance_create_depth(0, 0, 0, obj_camera);
+}
+	
+function animationEnd() {
+	return floor(image_index) >= (image_number - 1);
+}
+	
+function scr_movePlayer() {
+	if keyboard_check_direct(vk_left) move = -1;
+	else if keyboard_check_direct(vk_right) move = 1;
+	else move = 0;
+}
+	
+function scr_do_taunt() {
+	if (keyboard_check_pressed(ord("C"))) {
+		global.savedState = state;
+		global.savedMovespeed = movespeed;
+		global.savedSprite = sprite_index;
+		sprite_index = spr_player_taunt;
+		image_index = random_range(0, 12)
+		instance_create_depth(x, y, 10, obj_taunteffect)
+		tauntBuffer = 20;
+		state = states.taunt;
+	}
+}
+
+function scr_do_grab() {
+	if (keyboard_check_pressed(ord("X"))) {
+		if (!keyboard_check_direct(vk_up)) {
+			if (!grounded)
+				sprite_index = spr_player_suplexgrabjumpstart;
+			else sprite_index = spr_player_suplexdash;
+		
+			if (movespeed < 8)
+				movespeed = 8;
+			image_index = 0;
+			state = states.suplexgrab;
+			exit;
 		}
-		room_goto(arg0);
-		instance_create_depth(0, 0, 0, obj_camera);
-	}
-	
-	function animationEnd() {
-		return floor(image_index) >= (image_number - 1);
-	}
-	
-	function scr_movePlayer() {
-		if keyboard_check_direct(vk_left) move = -1;
-		else if keyboard_check_direct(vk_right) move = 1;
-		else move = 0;
-	}
-	
-	function scr_do_taunt() {
-		exit;	
-	}
-	
-	function scr_do_grab() {
-		if (keyboard_check_pressed(ord("X"))) {
-			if (!keyboard_check_direct(vk_up)) {
-				if (!grounded)
-					sprite_index = spr_player_suplexgrabjumpstart;
-				else sprite_index = spr_player_suplexdash;
-			
-				if (movespeed < 8)
-					movespeed = 8;
-				image_index = 0;
-				state = states.suplexgrab;
-				exit;
-			}
-			else {
-		        if (keyboard_check_direct(vk_shift))
-		            movespeed = abs(hsp);
-				movespeed = hsp;
-				vsp = grounded ? -14 : -10;
-				image_index = 0;
-		        sprite_index = spr_player_breakdanceuppercut;
-				state = states.uppercut;
-			}
+		else {
+	        if (keyboard_check_direct(vk_shift))
+	            movespeed = abs(hsp);
+			movespeed = hsp;
+			vsp = grounded ? -14 : -10;
+			image_index = 0;
+	        sprite_index = spr_player_breakdanceuppercut;
+			state = states.uppercut;
 		}
 	}
 }

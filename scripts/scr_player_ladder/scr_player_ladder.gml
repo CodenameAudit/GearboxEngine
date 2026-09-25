@@ -35,4 +35,6 @@ function scr_player_ladder(){
 		state = states.normal;
 		exit;
 	}
+	
+	image_speed = 0.35;
 }

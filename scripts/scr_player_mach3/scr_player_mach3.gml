@@ -3,7 +3,7 @@ function scr_player_mach3() {
 	var _maxcrazyspeed = 20;
 	var _accel = 0.025;
 	var _crazyAccel = 0.1;
-	var _machSpr = [spr_player_mach3, spr_player_mach3jump, spr_player_crazyrun, spr_player_rollgetup]
+	var _specialSpr = [spr_player_mach3jump, spr_player_rollgetup] 
 	
 	scr_movePlayer();
 	hsp = movespeed * xscale;
@@ -16,7 +16,8 @@ function scr_player_mach3() {
 	
 	if (movespeed >= _maxcrazyspeed) movespeed = _maxcrazyspeed;
 	
-	var _mach3Spr = (movespeed >= _maxmovespeed) ? spr_player_crazyrun : spr_player_mach3
+	if (!array_contains(_specialSpr, sprite_index))
+		sprite_index = (movespeed >= _maxmovespeed) ? spr_player_crazyrun : spr_player_mach3;
 	
 	if (keyboard_check_pressed(ord("Z")) && grounded) {
 		vsp = -11;
@@ -26,7 +27,7 @@ function scr_player_mach3() {
 		exit;
 	}
 	
-	if (!grounded && place_meeting(x + hsp, y, obj_solid)) {
+	if ((!grounded && place_meeting(x + hsp, y, obj_solid)) || (grounded && place_meeting(x, y + 16, obj_slope) && place_meeting(x + hsp, y - 16, obj_solid))) {
 		if (movespeed < 1)
 			wallspeed = 1;
 		else wallspeed = movespeed;
@@ -70,14 +71,11 @@ function scr_player_mach3() {
 		}
 	}
 
-	if ((sprite_index == spr_player_mach3jump || sprite_index == spr_player_rollgetup) && animationEnd())
-		sprite_index = _mach3Spr;
-		
-	if (!array_contains(_machSpr, sprite_index)) {
-		sprite_index = _mach3Spr	
-	}
+	if (array_contains(_specialSpr, sprite_index) && animationEnd())
+		sprite_index = spr_player_mach3;
 	
 	scr_do_grab();
+	scr_do_taunt();
 	switch (sprite_index) {
 		case spr_player_rollgetup:
 			image_speed = 0.35;

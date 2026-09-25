@@ -25,7 +25,7 @@ function scr_player_mach2() {
 		image_index = 0;
 	}
 	
-	if (!grounded && place_meeting(x + hsp, y, obj_solid)) {
+	if ((!grounded && place_meeting(x + hsp, y, obj_solid)) || (grounded && place_meeting(x, y + 16, obj_slope) && place_meeting(x + hsp, y - 16, obj_solid))) {
 		if (movespeed < 1)
 			wallspeed = 1;
 		else wallspeed = movespeed;
@@ -90,6 +90,7 @@ function scr_player_mach2() {
 	}
 	
 	scr_do_grab();
+	scr_do_taunt();
 	switch (sprite_index) {
 		case spr_player_rollgetup:
 		case spr_player_longjump:

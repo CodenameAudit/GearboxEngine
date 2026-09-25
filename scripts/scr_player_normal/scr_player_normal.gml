@@ -43,5 +43,6 @@ function scr_player_normal() {
 		sprite_index = spr_player_idle
 	
 	scr_do_grab();
+	scr_do_taunt();
 	image_speed = 0.35;
 }

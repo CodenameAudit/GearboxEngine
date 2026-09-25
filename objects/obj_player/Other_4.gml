@@ -46,4 +46,6 @@ if (global.savedState != -4) {
 			}
 			break;
 	}
+	if place_meeting(x, y, obj_warpbox)
+		y += 15
 }

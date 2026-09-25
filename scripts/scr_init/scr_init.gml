@@ -1,9 +1,9 @@
 function scr_init() {
 	global.collect = 0;
-	global.savedState = -4;
-	global.savedHsp = 0;
 	global.savedMovespeed = 0;
 	global.savedXscale = 0;
+	global.savedSprite = -4;
+	global.savedState = -4;
 	global.targetDoor = "A";
 	
 	enum states {
@@ -19,6 +19,8 @@ function scr_init() {
 		suplexgrab,
 		uppercut,
 		noclip,
+		enterWarp,
+		taunt
 	}
 	
 	with (obj_player) {

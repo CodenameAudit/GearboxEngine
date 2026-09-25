@@ -18,5 +18,6 @@ function scr_player_jump() {
 		sprite_index = spr_player_fall;
 	
 	scr_do_grab();
+	scr_do_taunt();
 	image_speed = 0.35;
 }

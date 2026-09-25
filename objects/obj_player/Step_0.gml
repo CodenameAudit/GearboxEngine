@@ -46,6 +46,15 @@ switch (state) {
 	case states.ladder:
 		scr_player_ladder();
 		break;
+	
+	case states.enterWarp:
+		scr_player_enterWarp();
+		break;
+	
+	case states.taunt:
+		scr_player_taunt();
+		break;
+	
 }
 
 var _crouchStates = [states.tumble]
