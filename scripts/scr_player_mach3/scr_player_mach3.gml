@@ -16,7 +16,7 @@ function scr_player_mach3() {
 	
 	if (movespeed >= _maxcrazyspeed) movespeed = _maxcrazyspeed;
 	
-	var _mach3Spr = (abs(hsp) >= _maxmovespeed) ? spr_player_crazyrun : spr_player_mach3
+	var _mach3Spr = (movespeed >= _maxmovespeed) ? spr_player_crazyrun : spr_player_mach3
 	
 	if (keyboard_check_pressed(ord("Z")) && grounded) {
 		vsp = -11;
@@ -64,13 +64,20 @@ function scr_player_mach3() {
 		exit;
 	}
 	
-	if ((sprite_index == spr_player_mach3jump || sprite_index == spr_player_rollgetup) && floor(image_index) == (image_number - 1))
+	if (!instance_exists(obj_chargeeffect)) {
+		with (instance_create_depth(x, y, 1, obj_chargeeffect)) {
+			image_xscale = obj_player.xscale;
+		}
+	}
+
+	if ((sprite_index == spr_player_mach3jump || sprite_index == spr_player_rollgetup) && animationEnd())
 		sprite_index = _mach3Spr;
 		
 	if (!array_contains(_machSpr, sprite_index)) {
 		sprite_index = _mach3Spr	
 	}
 	
+	scr_do_grab();
 	switch (sprite_index) {
 		case spr_player_rollgetup:
 			image_speed = 0.35;

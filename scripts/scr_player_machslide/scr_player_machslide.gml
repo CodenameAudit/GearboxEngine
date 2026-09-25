@@ -7,12 +7,12 @@ function scr_player_machslide() {
 	var _sMachSkid = [spr_player_machslidestart, spr_player_machslide, spr_player_machslideend]
 	
 	if (array_contains(_sMachTurn, sprite_index)) {
-		if (floor(image_index) == (image_number - 1) && !grounded && !array_contains(_sMachTurnFall, sprite_index)) {
+		if (animationEnd() && !grounded && !array_contains(_sMachTurnFall, sprite_index)) {
 			if sprite_index == spr_player_machslideboost3
 				sprite_index = spr_player_machslideboost3fall;
 			else sprite_index = spr_player_machslideboostfall;
 		}
-		else if floor(image_index) == (image_number - 1) && grounded {
+		else if animationEnd() && grounded {
 			if (sprite_index == spr_player_machslideboost3 || sprite_index == spr_player_machslideboost3fall) {
 				sprite_index = spr_player_mach3;
 				image_index = 0;
@@ -32,7 +32,7 @@ function scr_player_machslide() {
 		}
 	}
 	if (array_contains(_sMachSkid, sprite_index)) {
-		if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_machslidestart)
+		if (animationEnd() && sprite_index == spr_player_machslidestart)
 			sprite_index = spr_player_machslide;
 		
 		if (abs(movespeed) <= 0) {

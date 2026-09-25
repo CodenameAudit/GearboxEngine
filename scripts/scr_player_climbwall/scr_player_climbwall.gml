@@ -36,7 +36,9 @@ function scr_player_climbwall(){
 		vsp = -11;
 		xscale *= -1
 		sprite_index = spr_player_walljumpstart;
+		image_index = 0;
 		state = states.mach2;
 	}
+	
 	image_speed = 0.35;
 }

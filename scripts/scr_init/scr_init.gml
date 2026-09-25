@@ -9,13 +9,16 @@ function scr_init() {
 	enum states {
 		normal,
 		jump,
-		titlescreen,
+		ladder,
 		mach2,
 		mach3,
 		climbwall,
 		tumble,
 		machslide,
-		bump
+		bump,
+		suplexgrab,
+		uppercut,
+		noclip,
 	}
 	
 	with (obj_player) {

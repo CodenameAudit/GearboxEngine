@@ -5,8 +5,10 @@ wallspeed = 0;
 xscale = 1;
 move = 0;
 grounded = false;
+crouchslipbuffer = 0;
+ladderBuffer = 0;
 state = states.normal;
 savedState = -4;
 savedHsp = 0;
-scr_collision_init()
-scr_utilty()
+scr_collision_init();
+scr_utilty();

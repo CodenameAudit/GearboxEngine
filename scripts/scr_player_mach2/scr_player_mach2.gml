@@ -2,7 +2,7 @@ function scr_player_mach2() {
 	var _maxmovespeed = 12;
 	var _slopeacel = 0.1;
 	var _accel = 0.1;
-	var _sprBonus = [spr_player_secondjump2, spr_player_walljumpend]
+	var _sprBonus = [spr_player_secondjump2, spr_player_walljumpend, spr_player_longjumpend]
 	
 	scr_movePlayer();
 	hsp = movespeed * xscale;
@@ -62,12 +62,12 @@ function scr_player_mach2() {
 	}
 	
 	if (grounded && array_contains(_sprBonus, sprite_index)) {
-		if (abs(hsp) < 6)
+		if (abs(hsp) > 8)
 			sprite_index = spr_player_mach2;
 		else sprite_index = spr_player_mach1;
 	}
 	
-	if (floor(image_index) == (image_number - 1)) {
+	if (animationEnd()) {
 		switch (sprite_index) {
 			case spr_player_mach1:
 			case spr_player_climbwall:
@@ -82,12 +82,18 @@ function scr_player_mach2() {
 			case spr_player_walljumpstart:
 				sprite_index = spr_player_walljumpend;
 				break;
+			
+			case spr_player_longjump:
+				sprite_index = spr_player_longjumpend;
+				break;
 		}
 	}
 	
-	
+	scr_do_grab();
 	switch (sprite_index) {
 		case spr_player_rollgetup:
+		case spr_player_longjump:
+		case spr_player_longjumpend:
 			image_speed = 0.35;
 			break;
 		

@@ -91,7 +91,7 @@ function place_meeting_collision(xx, yy, exclude = Exclude.NONE) {
 			}			
 		}
 	}
-	if (check_platforms) { // Semisolid Collisions
+	if (check_platforms && obj_player.state != states.ladder) { // Semisolid Collisions
 		if (place_meeting_platform(xx, yy)) {
 			return true;
 		}

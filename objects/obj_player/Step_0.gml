@@ -7,8 +7,8 @@ switch (state) {
 		scr_player_jump();
 		break;
 	
-	case states.titlescreen:
-		scr_player_titlescreen();
+	case states.noclip:
+		scr_player_noclip();
 		break;
 	
 	case states.mach2:
@@ -34,7 +34,18 @@ switch (state) {
 	case states.bump:
 		scr_player_bump();
 		break;
-		
+	
+	case states.suplexgrab:
+		spr_player_suplexgrab();
+		break;
+	
+	case states.uppercut:
+		scr_player_uppercut();
+		break;
+	
+	case states.ladder:
+		scr_player_ladder();
+		break;
 }
 
 var _crouchStates = [states.tumble]
@@ -49,6 +60,13 @@ switch (state) {
 
 if (y > room_height)
 	scr_gotoRoom(room);
+
+if (ladderBuffer != 0)
+	ladderBuffer--;	
+
+if ((state == states.normal || state == states.jump || state == states.uppercut) && place_meeting(x, y + 3, obj_ladder) && ladderBuffer <= 0 && (keyboard_check_direct(vk_up) || keyboard_check_direct(vk_down))) {
+	state = states.ladder
+}
 
 image_xscale = xscale;
 scr_collision();

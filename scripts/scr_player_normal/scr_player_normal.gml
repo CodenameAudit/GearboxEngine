@@ -39,8 +39,9 @@ function scr_player_normal() {
 		else sprite_index = spr_player_idle;
 	}
 	
-	if (sprite_index == spr_player_land && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_player_land && animationEnd())
 		sprite_index = spr_player_idle
 	
+	scr_do_grab();
 	image_speed = 0.35;
 }

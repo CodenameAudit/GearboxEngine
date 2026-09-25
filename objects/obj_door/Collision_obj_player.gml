@@ -2,11 +2,10 @@ if (keyboard_check_pressed(vk_up) && other.grounded && other.state == states.nor
 	with (other) {
 		image_index = 0;
 		sprite_index = spr_player_lookdoor;
-		state = states.titlescreen;
 	}
 }
 
-if (other.sprite_index = spr_player_lookdoor && floor(image_index) == (image_number - 1)) {
+if (other.sprite_index = spr_player_lookdoor && animationEnd()) {
 	global.targetDoor = targetDoor;
 	with (other) {
 		state = states.normal;

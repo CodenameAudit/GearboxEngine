@@ -19,7 +19,7 @@ function scr_player_tumble() {
 	if (movespeed <= 2)
 		state = states.normal;
 	
-	if (grounded && (place_meeting(x + hsp, y - 1, obj_solid))) {
+	if (place_meeting(x + hsp, y - 6, obj_solid)) {
 		sprite_index = spr_player_wallsplat;
 		image_index = 0;
 		state = states.bump;
@@ -38,7 +38,7 @@ function scr_player_tumble() {
 				sprite_index = spr_player_mach2;
 			break;
 	}
-	if (!keyboard_check_direct(vk_down) && !place_meeting(x, y - 32, obj_solid) && grounded) {
+	if (!keyboard_check_direct(vk_down) && !place_meeting(x, y - 32, obj_solid) && crouchslipbuffer == 0 && grounded) {
 		if (movespeed >= 12)
 			state = states.mach3;
 		else
@@ -47,6 +47,9 @@ function scr_player_tumble() {
 		image_index = 0;
 		sprite_index = spr_player_rollgetup;
 	}
+	
+	if (crouchslipbuffer != 0)
+		crouchslipbuffer--;	
 	
 	image_speed = abs(movespeed) / 15;
 }

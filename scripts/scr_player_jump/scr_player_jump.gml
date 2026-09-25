@@ -1,7 +1,7 @@
 function scr_player_jump() {
 	scr_movePlayer();
-	
 	hsp = movespeed;
+	var _spriteShit = [spr_player_jump, spr_player_suplexcancel]
 	
 	if move != 0 && !place_meeting(((x + hsp) * move), y, obj_solid){
 		movespeed = 7 * move
@@ -14,8 +14,9 @@ function scr_player_jump() {
 		sprite_index = spr_player_land;
 	}
 	
-	if (sprite_index == spr_player_jump && floor(image_index) == (image_number - 1))
+	if (array_contains(_spriteShit, sprite_index) && animationEnd())
 		sprite_index = spr_player_fall;
 	
+	scr_do_grab();
 	image_speed = 0.35;
 }

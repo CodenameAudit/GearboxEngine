@@ -1,7 +1,7 @@
 function scr_player_bump() {
 	var _bumpAnimation = [spr_player_wallsplat, spr_player_mach3hitwall]
 	
-	if (floor(image_index) == (image_number - 1)) {
+	if (animationEnd()) {
 		state = states.normal;
 		sprite_index = spr_player_idle;
 		image_index = 0;
