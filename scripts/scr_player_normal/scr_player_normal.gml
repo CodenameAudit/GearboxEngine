@@ -24,7 +24,7 @@ function scr_player_normal() {
 	}
 	
 	if (keyboard_check_pressed(vk_down) && grounded) {		
-		sprite_index = spr_player_mach1;
+		sprite_index = spr_player_crouchstart;
 		image_index = 0;
 		state = states.crouch;
 		exit;

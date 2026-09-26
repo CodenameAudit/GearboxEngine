@@ -16,6 +16,14 @@ function scr_player_jump() {
 		else sprite_index = spr_player_land;
 	}
 	
+	if (keyboard_check_pressed(vk_down)) {		
+		sprite_index = spr_player_bodyslamstart;
+		image_index = 0;
+		vsp = -6;
+		state = states.freefall;
+		exit;
+	}
+	
 	if (array_contains(_spriteShit, sprite_index) && animationEnd())
 		sprite_index = spr_player_fall;
 	

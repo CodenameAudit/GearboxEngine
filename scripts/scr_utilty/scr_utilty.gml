@@ -26,7 +26,7 @@ function scr_do_taunt() {
 		global.savedSprite = sprite_index;
 		sprite_index = spr_player_taunt;
 		image_index = random_range(0, 12)
-		instance_create_depth(x, y, 10, obj_taunteffect)
+		tauntEffect = 0;
 		tauntBuffer = 20;
 		state = states.taunt;
 	}

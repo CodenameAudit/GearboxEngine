@@ -1,18 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_taunteffect",
+  "%Name":"obj_metalBlock",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_taunteffect",
+  "name":"obj_metalBlock",
   "overriddenProperties":[],
   "parent":{
-    "name":"Effects",
-    "path":"folders/Objects/Effects.yy",
+    "name":"Destroyables",
+    "path":"folders/Objects/Room Structure/Destroyables.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"par_destroyables",
+    "path":"objects/par_destroyables/par_destroyables.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_taunteffect",
-    "path":"sprites/spr_taunteffect/spr_taunteffect.yy",
+    "name":"spr_metaltowerblock",
+    "path":"sprites/spr_metaltowerblock/spr_metaltowerblock.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -58,6 +58,14 @@ switch (state) {
 	case states.crouch:
 		scr_player_crouch();
 		break;
+	
+	case states.freefall:
+		scr_player_freefall();
+		break;
+	
+	case states.freefallland:
+		scr_player_freefallland();
+		break;
 }
 
 var _crouchStates = [states.crouch, states.tumble]

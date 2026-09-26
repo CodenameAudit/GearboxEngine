@@ -79,6 +79,8 @@
     {"name":"inst_65143A7C","path":"rooms/rm_testingGrounds/rm_testingGrounds.yy",},
     {"name":"inst_7C0A3992","path":"rooms/rm_testingGrounds/rm_testingGrounds.yy",},
     {"name":"inst_3BF93D82","path":"rooms/rm_testingGrounds/rm_testingGrounds.yy",},
+    {"name":"inst_432C0EA8","path":"rooms/rm_testingGrounds/rm_testingGrounds.yy",},
+    {"name":"inst_1A3B68B7","path":"rooms/rm_testingGrounds/rm_testingGrounds.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -163,6 +165,8 @@
         {"$GMRInstance":"v4","%Name":"inst_3BF93D82","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3BF93D82","objectId":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"propertyId":{"name":"targetRoom","path":"objects/obj_door/obj_door.yy",},"resource":{"name":"hallway_1","path":"rooms/hallway_1/hallway_1.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"hallway_1",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1984.0,"y":784.0,},
+        {"$GMRInstance":"v4","%Name":"inst_432C0EA8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_432C0EA8","objectId":{"name":"obj_metalBlock","path":"objects/obj_metalBlock/obj_metalBlock.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2336.0,"y":1024.0,},
+        {"$GMRInstance":"v4","%Name":"inst_1A3B68B7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1A3B68B7","objectId":{"name":"obj_metalBlock","path":"objects/obj_metalBlock/obj_metalBlock.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2432.0,"y":1024.0,},
       ],"layers":[],"name":"Instances_1","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Backgrounds_still","animationFPS":30.0,"animationSpeedType":0,"colour":4284900966,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Backgrounds_still","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],

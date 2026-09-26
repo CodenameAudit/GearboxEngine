@@ -21,7 +21,9 @@ function scr_init() {
 		noclip,
 		enterWarp,
 		taunt,
-		crouch
+		crouch,
+		freefall,
+		freefallland
 	}
 	
 	with (obj_player) {
