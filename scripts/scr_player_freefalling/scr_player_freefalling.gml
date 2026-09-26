@@ -2,7 +2,7 @@ function scr_player_freefall(){
 	scr_movePlayer();
 	hsp = movespeed;
 	
-	if (grounded) {
+	if (grounded && !place_meeting(x, y + 6, par_destroyables)) {
 		//Landed
 		if (place_meeting(x, y + abs(vsp), obj_slope)) {
 			state = states.tumble;
@@ -26,9 +26,13 @@ function scr_player_freefall(){
 	}
 	else {
 		if (move != 0)
-			movespeed = approach(movespeed, move * 7, 0.25);
-		else movespeed = approach(movespeed, 0, 0.1);
-	
+			movespeed = approach(movespeed, move * 7, 0.2);
+		
+		if (move != 0 && move != xscale) {
+			movespeed = 0;
+			xscale = move;
+		}
+		
 		if (place_meeting(x + move, y, obj_solid))
 			movespeed = 0;
 		

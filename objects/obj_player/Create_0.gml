@@ -9,6 +9,7 @@ crouchslipbuffer = 0;
 ladderBuffer = 0;
 tauntBuffer = 0;
 tauntEffect = 0;
+chargeEffect = 0;
 state = states.normal;
 savedState = -4;
 savedHsp = 0;

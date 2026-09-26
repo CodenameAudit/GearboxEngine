@@ -8,8 +8,8 @@
   "name":"obj_bigCollect",
   "overriddenProperties":[],
   "parent":{
-    "name":"Room Structure",
-    "path":"folders/Objects/Room Structure.yy",
+    "name":"Collectibles",
+    "path":"folders/Objects/Room Structure/Collectibles.yy",
   },
   "parentObjectId":{
     "name":"par_collectibles",

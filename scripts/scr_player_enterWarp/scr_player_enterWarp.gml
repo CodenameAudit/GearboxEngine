@@ -16,8 +16,8 @@ function scr_player_enterWarp(){
 				break;
 				
 			case spr_player_pizzaboxdown:
-				state = states.normal;
-				sprite_index = spr_player_idle;
+				state = states.crouch;
+				sprite_index = spr_player_crouchfall;
 				break;
 			
 		}

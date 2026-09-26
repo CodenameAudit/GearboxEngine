@@ -42,7 +42,7 @@ function scr_player_tumble() {
 	if (keyboard_check_pressed(ord("Z")) && sprite_index == spr_player_dive) {		
 		sprite_index = spr_player_poundcancel1;
 		image_index = 0;
-		movespeed = hsp
+		movespeed = hsp;
 		vsp = -6;
 		state = states.freefall;
 		exit;

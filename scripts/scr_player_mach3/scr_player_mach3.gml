@@ -64,12 +64,6 @@ function scr_player_mach3() {
 		state = states.machslide;
 		exit;
 	}
-	
-	if (!instance_exists(obj_chargeeffect)) {
-		with (instance_create_depth(x, y, 1, obj_chargeeffect)) {
-			image_xscale = obj_player.xscale;
-		}
-	}
 
 	if (array_contains(_specialSpr, sprite_index) && animationEnd())
 		sprite_index = spr_player_mach3;

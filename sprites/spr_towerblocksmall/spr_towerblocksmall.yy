@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Structure",
-    "path":"folders/Sprites/Structure.yy",
+    "name":"Destroyables",
+    "path":"folders/Sprites/Structure/Destroyables.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

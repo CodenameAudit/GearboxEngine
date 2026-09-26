@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_player_noclip",
   "parent":{
-    "name":"Player States",
-    "path":"folders/Scripts/Player States.yy",
+    "name":"Debug",
+    "path":"folders/Scripts/Player States/Debug.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -33,8 +33,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"Destroyables",
+    "path":"folders/Sprites/Structure/Destroyables.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

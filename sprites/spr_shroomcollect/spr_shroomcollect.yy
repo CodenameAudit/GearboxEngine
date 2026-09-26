@@ -40,8 +40,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Structure",
-    "path":"folders/Sprites/Structure.yy",
+    "name":"Collectibles",
+    "path":"folders/Sprites/Structure/Collectibles.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -6,7 +6,7 @@ function scr_player_climbwall(){
     if (wallspeed < 20)
 		wallspeed += 0.15;
 	
-	if (!place_meeting(x + xscale, y, obj_solid) && wallspeed > 0) {
+	if (!place_meeting(x + xscale, y - (wallspeed / 10), obj_solid) && wallspeed > 0) {
 		vsp = 0;
 		if (wallspeed < 6)
 			wallspeed = 6;

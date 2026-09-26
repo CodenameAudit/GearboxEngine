@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boxofpizza",
-    "path":"sprites/spr_boxofpizza/spr_boxofpizza.yy",
+    "name":"spr_warpbox",
+    "path":"sprites/spr_warpbox/spr_warpbox.yy",
   },
   "spriteMaskId":null,
   "visible":true,
