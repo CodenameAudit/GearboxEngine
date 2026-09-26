@@ -1,19 +1,25 @@
 function scr_player_normal() {
 	scr_movePlayer();
+	hsp = movespeed * xscale;
 	
-	hsp = movespeed;
-	
-	if move != 0 && !place_meeting(((x + hsp) * move), y, obj_solid){
-		movespeed = 7 * move
-		xscale = move
-	}
+	if (move != 0)
+		movespeed = approach(movespeed, 8, 0.5);
 	else movespeed = 0;
+	
+	if (move != 0 && move != xscale) {
+		movespeed = 0;
+		xscale = move;
+	}
 	
 	if (keyboard_check_pressed(ord("Z")) && grounded) {
 		vsp = -11;
 		state = states.jump;
 		sprite_index = spr_player_jump;
 		image_index = 0;
+		
+		with (instance_create_depth(x, y, 0, obj_dusteffect))
+			sprite_index = spr_highjumpcloud;
+			
 		exit;
 	}
 	else if !grounded {
@@ -38,6 +44,13 @@ function scr_player_normal() {
 		image_index = 0;
 		state = states.mach2;
 		exit;
+	}
+	
+	if (sprite_index = spr_player_move && dustEffect > 0)
+		dustEffect--;
+	else if (dustEffect == 0) {
+		instance_create_depth(x, y + 43, 0, obj_dusteffect)
+		dustEffect = 12;	
 	}
 	
 	if (sprite_index != spr_player_land && sprite_index != spr_player_land2) {

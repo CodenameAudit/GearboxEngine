@@ -35,12 +35,15 @@ function scr_do_taunt() {
 function scr_do_grab() {
 	if (keyboard_check_pressed(ord("X"))) {
 		if (!keyboard_check_direct(vk_up)) {
-			if (!grounded)
-				sprite_index = spr_player_suplexgrabjumpstart;
-			else sprite_index = spr_player_suplexdash;
-		
+			sprite_index = (!grounded) ? spr_player_suplexgrabjumpstart : spr_player_suplexdash;
 			if (movespeed < 8)
 				movespeed = 8;
+			
+			with (instance_create_depth(x, y, 0, obj_dusteffect)) {
+				sprite_index = spr_jumpdust;
+				image_xscale = other.xscale;
+			}
+			
 			image_index = 0;
 			state = states.suplexgrab;
 			exit;
@@ -48,8 +51,13 @@ function scr_do_grab() {
 		else {
 	        if (keyboard_check_direct(vk_shift))
 	            movespeed = abs(hsp);
+			
 			movespeed = hsp;
 			vsp = grounded ? -14 : -10;
+			
+			with (instance_create_depth(x, y, 0, obj_dusteffect))
+				sprite_index = spr_highjumpcloud;
+			
 			image_index = 0;
 	        sprite_index = spr_player_breakdanceuppercut;
 			state = states.uppercut;

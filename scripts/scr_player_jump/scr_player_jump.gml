@@ -1,19 +1,26 @@
 function scr_player_jump() {
 	scr_movePlayer();
-	hsp = movespeed;
+	hsp = movespeed * xscale;
 	var _spriteShit = [spr_player_jump, spr_player_suplexcancel]
 	
-	if move != 0 && !place_meeting(((x + hsp) * move), y, obj_solid){
-		movespeed = 7 * move
-		xscale = move
-	}
+	if (move != 0)
+		movespeed = approach(movespeed, 8, 0.5);
 	else movespeed = 0;
 	
+	if (move != 0 && move != xscale) {
+		movespeed = 0;
+		xscale = move;
+	}
+	
 	if (grounded) {
-		state = states.normal
-		if (move != 0)
-			sprite_index = spr_player_land2;
-		else sprite_index = spr_player_land;
+		state = states.normal;
+		sprite_index = (move != 0) ? spr_player_land2 : spr_player_land
+		
+		with (instance_create_depth(x, y, 0, obj_dusteffect))
+			sprite_index = spr_landcloud;
+			
+		image_index = 0;
+		exit;
 	}
 	
 	if (keyboard_check_pressed(vk_down)) {		

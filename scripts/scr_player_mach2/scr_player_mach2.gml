@@ -67,6 +67,13 @@ function scr_player_mach2() {
 		else sprite_index = spr_player_mach1;
 	}
 	
+	if (!instance_exists(obj_dashcloud) && grounded) {
+		with (instance_create_depth(x, y, 0, obj_dashcloud))
+			image_xscale = other.xscale;
+	}
+	
+	scr_do_grab();
+	scr_do_taunt();
 	if (animationEnd()) {
 		switch (sprite_index) {
 			case spr_player_mach1:
@@ -89,8 +96,6 @@ function scr_player_mach2() {
 		}
 	}
 	
-	scr_do_grab();
-	scr_do_taunt();
 	switch (sprite_index) {
 		case spr_player_rollgetup:
 		case spr_player_longjump:

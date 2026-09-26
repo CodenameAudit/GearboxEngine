@@ -33,8 +33,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"group1",
-    "path":"folders/Sprites/group1.yy",
+    "name":"Effects",
+    "path":"folders/Sprites/Effects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

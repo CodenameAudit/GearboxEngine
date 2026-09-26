@@ -62,6 +62,7 @@ function spr_player_suplexgrab(){
 			state = states.normal;
 			sprite_index = spr_player_idle;
 		}
+		exit;
 	}
 	
 	if (grounded && (array_contains(_aerialMove, sprite_index))) {

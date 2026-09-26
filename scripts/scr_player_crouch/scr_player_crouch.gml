@@ -1,10 +1,10 @@
 function scr_player_crouch() {
 	scr_movePlayer();
-	hsp = movespeed;
+	hsp = movespeed * xscale;
 	var _nonwdawd = [spr_player_crouchjump, spr_player_crouchfall, spr_player_crouchstart]
 	
 	if move != 0 && !place_meeting(((x + hsp) * move), y, obj_solid){
-		movespeed = 4 * move
+		movespeed = 4
 		xscale = move
 	}
 	else movespeed = 0;

@@ -29,6 +29,7 @@ function scr_player_machslide() {
 				movespeed = 8;
 				state = states.mach2
 			}
+			instance_destroy(obj_dashcloud);
 		}
 	}
 	if (array_contains(_sMachSkid, sprite_index)) {
@@ -42,11 +43,16 @@ function scr_player_machslide() {
 		}
 		
 		if (grounded && (place_meeting(x + hsp, y - 16, obj_solid))) {
-		sprite_index = spr_player_wallsplat;
-		image_index = 0;
-		state = states.bump;
-		exit;
+			sprite_index = spr_player_wallsplat;
+			image_index = 0;
+			state = states.bump;
+			exit;
+		}
 	}
+	
+	if (!instance_exists(obj_dashcloud) && grounded) {
+		with (instance_create_depth(x, y, 0, obj_dashcloud))
+			image_xscale = other.xscale;
 	}
 	
 	image_speed = 0.35;

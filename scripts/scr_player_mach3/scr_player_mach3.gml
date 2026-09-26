@@ -23,6 +23,12 @@ function scr_player_mach3() {
 		vsp = -11;
 		if !(movespeed >= _maxmovespeed)
 			sprite_index = spr_player_mach3jump;
+		
+		with (instance_create_depth(x, y, 0, obj_dusteffect)) {
+			sprite_index = spr_jumpdust;
+			image_xscale = other.xscale;
+		}
+			
 		image_index = 0;
 		exit;
 	}
@@ -45,10 +51,21 @@ function scr_player_mach3() {
 	}
 	
 	if (keyboard_check_direct(vk_down)) {
-		state = states.tumble
+		state = states.tumble;
+		
+		with (instance_create_depth(x, y, 0, obj_dusteffect)) {
+			sprite_index = spr_jumpdust;
+			image_xscale = other.xscale;
+		}
+			
 		sprite_index = spr_player_machroll;
 		image_index = 0;
 		exit;
+	}
+	
+	if (!instance_exists(obj_dashcloud) && grounded) {
+		with (instance_create_depth(x, y, 0, obj_dashcloud))
+			image_xscale = other.xscale;
 	}
 	
 	if (!keyboard_check_direct(vk_shift) && grounded) {
