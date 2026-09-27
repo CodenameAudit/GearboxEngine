@@ -22,5 +22,8 @@ if (state == states.freefall && freefallSmash >= 10) {
 		chargeEffect = 0;	
 	}
 }
+if (global.key) {
+	draw_sprite(spr_key, 0, wave(x - 45, x + 12.5, 2, 0), wave(y - 45, y + 45, 4, 0));
+}
 
 draw_self();

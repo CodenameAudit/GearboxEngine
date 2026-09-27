@@ -1,6 +1,7 @@
 function scr_init() {
 	global.collect = 0;
 	global.savedSprite = -4;
+	global.key = false;
 	
 	enum states {
 		normal,
@@ -16,6 +17,7 @@ function scr_init() {
 		uppercut,
 		noclip,
 		enterWarp,
+		exitDoor,
 		taunt,
 		crouch,
 		freefall,

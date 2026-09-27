@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_enemy_scared",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Enemy States",
+    "path":"folders/Scripts/Enemy States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

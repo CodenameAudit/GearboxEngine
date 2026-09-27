@@ -51,6 +51,10 @@ switch (state) {
 		scr_player_enterWarp();
 		break;
 	
+	case states.exitDoor:
+		scr_player_exitDoor();
+		break;
+	
 	case states.taunt:
 		scr_player_taunt();
 		break;
