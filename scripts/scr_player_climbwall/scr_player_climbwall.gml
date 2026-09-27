@@ -26,6 +26,13 @@ function scr_player_climbwall(){
 		hsp = wallspeed * xscale;
 	}
 	
+	if (dustEffect > 0)
+		dustEffect--;
+	else if (dustEffect == 0) {
+		instance_create_depth(x + (xscale * 10), y + 43, 0, obj_dusteffect)
+		dustEffect = 10;	
+	}
+	
 	if (!keyboard_check_direct(vk_shift)) {
 		state = states.jump;
 		sprite_index = spr_player_fall;

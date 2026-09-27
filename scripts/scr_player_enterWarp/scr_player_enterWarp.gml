@@ -21,7 +21,6 @@ function scr_player_enterWarp(){
 				break;
 			
 		}
-
 		
 		scr_gotoRoom(targetRoom)
     }

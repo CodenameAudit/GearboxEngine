@@ -2,7 +2,7 @@ function scr_player_mach2() {
 	var _maxmovespeed = 12;
 	var _slopeacel = 0.1;
 	var _accel = 0.1;
-	var _sprBonus = [spr_player_secondjump1, spr_player_secondjump2, spr_player_walljumpend, spr_player_longjump, spr_player_longjumpend]
+	var _sprBonus = [spr_player_secondjump2, spr_player_walljumpend, spr_player_longjumpend]
 	
 	scr_movePlayer();
 	scr_jumpStopPlayer();

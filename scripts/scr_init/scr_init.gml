@@ -26,6 +26,12 @@ function scr_init() {
 		freefallland
 	}
 	
+	enum enemyStates {
+		idle,
+		walk,
+		scared
+	}
+	
 	with (obj_player) {
 		state = states.normal	
 	}

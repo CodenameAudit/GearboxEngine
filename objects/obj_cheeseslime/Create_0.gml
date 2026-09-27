@@ -1,0 +1,14 @@
+state = enemyStates.walk;
+movespeed = 0;
+xscale = 1;
+idleSprite = spr_null;
+walkSprite = spr_slimemove;
+fallSprite = spr_null;
+landSprite = spr_null;
+turnSprite = spr_slimemove;
+stunSprite = spr_null;
+grabbedSprite = spr_null;
+scaredSprite = spr_null;
+sprite_index = spr_null;
+mask_index = spr_player_mask;
+scr_collision_init();
