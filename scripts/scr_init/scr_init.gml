@@ -1,10 +1,6 @@
 function scr_init() {
 	global.collect = 0;
-	global.savedMovespeed = 0;
-	global.savedXscale = 0;
 	global.savedSprite = -4;
-	global.savedState = -4;
-	global.targetDoor = "A";
 	
 	enum states {
 		normal,
@@ -31,8 +27,8 @@ function scr_init() {
 		walk,
 		scared
 	}
-	
+
 	with (obj_player) {
-		state = states.normal	
+		state = states.normal
 	}
 }

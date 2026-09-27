@@ -1,3 +1,2 @@
 image_speed = 0.35;
-targetDoor = "A";
-depth = 2;
+depth = 5;

@@ -7,21 +7,25 @@ function scr_player_enterWarp(){
     if (animationEnd())
     {
         image_speed = 0;
-		
-		switch (sprite_index) {
-			case spr_player_pizzaboxup:
-			case spr_player_lookdoor:
-				state = states.normal;
-				sprite_index = spr_player_idle;
-				break;
+		if (!instance_exists(obj_fadeout)) {
+			with (instance_create_depth(x, y, 0, obj_fadeout)) {
+				targetRoom = other.savedTRoom;
+				targetDoor = other.savedTDoor;
 				
-			case spr_player_pizzaboxdown:
-				state = states.crouch;
-				sprite_index = spr_player_crouchfall;
-				break;
-			
+				switch (other.sprite_index) {
+					case spr_player_pizzaboxup:
+					case spr_player_lookdoor:
+						savedState = states.normal;
+						break;
+				
+					case spr_player_pizzaboxdown:
+						savedState = states.crouch;
+						break;
+				}
+				
+				savedMovespeed = obj_player.movespeed
+				savedXscale = obj_player.xscale
+			}
 		}
-		
-		scr_gotoRoom(targetRoom)
     }
 }

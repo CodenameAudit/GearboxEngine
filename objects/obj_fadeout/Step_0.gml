@@ -1,16 +1,12 @@
-if (fadeStart == true && fadeShit < 1) {
-	fadeShit += 0.1;
-}
-else if (fadeClose == true && fadeShit > 0) {
-	fadeShit -= 0.1;
-}
+if (fadeStart && fadeAlpha < 1)
+	fadeAlpha += 0.1;
+else if (fadeClose && fadeAlpha > 0)
+	fadeAlpha -= 0.1; 
 
-if (fadeShit == 1 && fadeStart = true) {
-	fadeStart = false;
-	fadeClose = true;
-	scr_gotoRoom(targetRoom)
+if (fadeAlpha == 1 && fadeStart = true) {
+	scr_gotoRoom(targetRoom);
 }
-else if (fadeShit == 0 && fadeClose = true) {
+else if (fadeAlpha == 0 && fadeClose = true) {
 	fadeClose = false;
 	instance_destroy();
 }
