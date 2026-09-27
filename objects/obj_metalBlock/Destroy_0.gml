@@ -1,5 +1,3 @@
-// Inherit the parent event
-event_inherited();
 repeat (8) {
 with (instance_create_depth(x + random_range(0, 64), y + random_range(0, 64), 0, obj_destroyableParticles))
 	{

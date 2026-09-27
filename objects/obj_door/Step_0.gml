@@ -1,7 +1,7 @@
 scr_utilty();
 
 with (obj_player) {
-	if (place_meeting(x, y, other) && keyboard_check_pressed(vk_up) && grounded && state == states.normal) {
+	if (place_meeting(x, y, other) && keyboard_check_direct(vk_up) && grounded && state == states.normal) {
 		
 		state = states.enterWarp
 		targetRoom = other.targetRoom

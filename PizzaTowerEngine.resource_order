@@ -170,6 +170,7 @@
     {"name":"spr_slope","order":1,"path":"sprites/spr_slope/spr_slope.yy",},
     {"name":"spr_solid","order":5,"path":"sprites/spr_solid/spr_solid.yy",},
     {"name":"spr_superdashcloud","order":11,"path":"sprites/spr_superdashcloud/spr_superdashcloud.yy",},
+    {"name":"spr_superslameffect","order":15,"path":"sprites/spr_superslameffect/spr_superslameffect.yy",},
     {"name":"spr_taunteffect","order":4,"path":"sprites/spr_taunteffect/spr_taunteffect.yy",},
     {"name":"spr_tomatocollect","order":9,"path":"sprites/spr_tomatocollect/spr_tomatocollect.yy",},
     {"name":"spr_towerblock","order":3,"path":"sprites/spr_towerblock/spr_towerblock.yy",},

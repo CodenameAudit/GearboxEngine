@@ -2,9 +2,10 @@ function scr_player_mach2() {
 	var _maxmovespeed = 12;
 	var _slopeacel = 0.1;
 	var _accel = 0.1;
-	var _sprBonus = [spr_player_secondjump2, spr_player_walljumpend, spr_player_longjumpend]
+	var _sprBonus = [spr_player_secondjump1, spr_player_secondjump2, spr_player_walljumpend, spr_player_longjump, spr_player_longjumpend]
 	
 	scr_movePlayer();
+	scr_jumpStopPlayer();
 	hsp = movespeed * xscale;
 
 	if (grounded) {
@@ -19,7 +20,7 @@ function scr_player_mach2() {
 		}
 	}
 	
-	if (keyboard_check_pressed(ord("Z")) && grounded) {
+	if (keyboard_check_pressed(ord("Z")) && canJump) {
 		vsp = -11;
 		sprite_index = spr_player_secondjump1;
 		image_index = 0;

@@ -1,7 +1,8 @@
 function scr_player_crouch() {
-	scr_movePlayer();
-	hsp = movespeed * xscale;
 	var _nonwdawd = [spr_player_crouchjump, spr_player_crouchfall, spr_player_crouchstart]
+	scr_movePlayer();
+	scr_jumpStopPlayer();
+	hsp = movespeed * xscale;
 	
 	if move != 0 && !place_meeting(((x + hsp) * move), y, obj_solid){
 		movespeed = 4
@@ -9,7 +10,7 @@ function scr_player_crouch() {
 	}
 	else movespeed = 0;
 	
-	if (keyboard_check_pressed(ord("Z")) && !place_meeting(x, y - 32, obj_solid) && grounded) {
+	if (keyboard_check_pressed(ord("Z")) && !place_meeting(x, y - 32, obj_solid) && canJump) {
 		vsp = -8;
 		sprite_index = spr_player_crouchjump;
 		image_index = 0;

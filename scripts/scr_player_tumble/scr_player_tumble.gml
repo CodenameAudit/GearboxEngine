@@ -43,6 +43,7 @@ function scr_player_tumble() {
 		sprite_index = spr_player_poundcancel1;
 		image_index = 0;
 		vsp = -6;
+		freefallSmash = -14;
 		state = states.freefall;
 		exit;
 	}

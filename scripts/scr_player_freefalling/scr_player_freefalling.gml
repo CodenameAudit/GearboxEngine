@@ -2,7 +2,7 @@ function scr_player_freefall(){
 	scr_movePlayer();
 	hsp = movespeed * xscale;
 	
-	if (grounded && !place_meeting(x, y + vsp, par_destroyables)) {
+	if (grounded && !place_meeting(x, y + abs(vsp), par_destroyables)) {
 		//Landed
 		if (place_meeting(x, y + abs(vsp), obj_slope)) {
 			state = states.tumble;
@@ -37,6 +37,9 @@ function scr_player_freefall(){
 			movespeed = 0;
 		
 		if (vsp >= 2) vsp += 0.5;
+		
+		if (vsp > 0)
+	        freefallSmash++;
 		
 		if (animationEnd() && sprite_index == spr_player_bodyslamstart)
 			sprite_index = spr_player_bodyslamfall;

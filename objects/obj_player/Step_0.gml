@@ -78,6 +78,15 @@ switch (state) {
 		grav = 0.5;
 }
 
+canJump = ((coyoteTimer != 0 || grounded) && vsp > 0) ? true : false;
+
+if (grounded) {
+	coyoteTimer = 8;	
+}
+
+if (coyoteTimer > 0 && !grounded)
+    coyoteTimer--;
+
 if (y > room_height)
 	scr_gotoRoom(room);
 

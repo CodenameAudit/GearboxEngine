@@ -16,7 +16,7 @@ function spr_player_suplexgrab(){
 		exit;
 	}
 	
-	if (keyboard_check_pressed(ord("Z")) && grounded) {
+	if (keyboard_check_pressed(ord("Z")) && canJump) {
 		vsp = -11;
 		state = states.mach2;
 		sprite_index = spr_player_longjump;

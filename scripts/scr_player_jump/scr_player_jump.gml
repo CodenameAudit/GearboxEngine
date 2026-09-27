@@ -1,7 +1,9 @@
 function scr_player_jump() {
-	scr_movePlayer();
-	hsp = movespeed * xscale;
 	var _spriteShit = [spr_player_jump, spr_player_suplexcancel]
+	
+	scr_movePlayer();
+	scr_jumpStopPlayer();
+	hsp = movespeed * xscale;
 	
 	if (move != 0)
 		movespeed = approach(movespeed, 8, 0.5);
@@ -27,6 +29,7 @@ function scr_player_jump() {
 		sprite_index = spr_player_bodyslamstart;
 		image_index = 0;
 		vsp = -6;
+		freefallSmash = -14;
 		state = states.freefall;
 		exit;
 	}

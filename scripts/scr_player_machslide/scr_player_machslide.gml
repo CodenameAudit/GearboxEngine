@@ -1,10 +1,11 @@
 function scr_player_machslide() {
-	scr_movePlayer();
-	hsp = movespeed * xscale;
-	movespeed = approach(movespeed, 0, 0.4);
 	var _sMachTurn = [spr_player_machslideboost, spr_player_machslideboostfall, spr_player_machslideboost3, spr_player_machslideboost3fall]
 	var _sMachTurnFall = [spr_player_machslideboostfall, spr_player_machslideboost3fall]
 	var _sMachSkid = [spr_player_machslidestart, spr_player_machslide, spr_player_machslideend]
+	
+	scr_movePlayer();
+	hsp = movespeed * xscale;
+	movespeed = approach(movespeed, 0, 0.4);
 	
 	if (array_contains(_sMachTurn, sprite_index)) {
 		if (animationEnd() && !grounded && !array_contains(_sMachTurnFall, sprite_index)) {

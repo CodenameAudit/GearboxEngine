@@ -6,6 +6,7 @@ function scr_player_mach3() {
 	var _specialSpr = [spr_player_mach3jump, spr_player_rollgetup] 
 	
 	scr_movePlayer();
+	scr_jumpStopPlayer();
 	hsp = movespeed * xscale;
 	
 	if (grounded) {
@@ -19,7 +20,7 @@ function scr_player_mach3() {
 	if (!array_contains(_specialSpr, sprite_index))
 		sprite_index = (movespeed >= _maxmovespeed) ? spr_player_crazyrun : spr_player_mach3;
 	
-	if (keyboard_check_pressed(ord("Z")) && grounded) {
+	if (keyboard_check_pressed(ord("Z")) && canJump) {
 		vsp = -11;
 		if !(movespeed >= _maxmovespeed)
 			sprite_index = spr_player_mach3jump;

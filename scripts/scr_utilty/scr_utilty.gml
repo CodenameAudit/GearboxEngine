@@ -12,7 +12,16 @@ function scr_gotoRoom(arg0) {
 function animationEnd() {
 	return floor(image_index) >= (image_number - 1);
 }
-	
+
+function scr_jumpStopPlayer() {
+	if (keyboard_check_released(ord("Z")) && vsp < 0.5 && !jumpStop && !grounded){
+		vsp /= 20;
+		jumpStop = true;
+	}
+
+	if (grounded) jumpStop = false;
+}
+
 function scr_movePlayer() {
 	if keyboard_check_direct(vk_left) move = -1;
 	else if keyboard_check_direct(vk_right) move = 1;

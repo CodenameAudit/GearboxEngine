@@ -11,7 +11,7 @@ function scr_player_normal() {
 		xscale = move;
 	}
 	
-	if (keyboard_check_pressed(ord("Z")) && grounded) {
+	if (keyboard_check_pressed(ord("Z")) && canJump) {
 		vsp = -11;
 		state = states.jump;
 		sprite_index = spr_player_jump;
