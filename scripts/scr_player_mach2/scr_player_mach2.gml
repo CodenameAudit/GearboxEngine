@@ -19,7 +19,7 @@ function scr_player_mach2() {
 			exit;
 		}
 	}
-	
+		
 	if (keyboard_check_pressed(ord("Z")) && canJump) {
 		vsp = -11;
 		sprite_index = spr_player_secondjump1;
@@ -75,6 +75,7 @@ function scr_player_mach2() {
 	
 	scr_do_grab();
 	scr_do_taunt();
+	scr_afterimageMach3();
 	if (animationEnd()) {
 		switch (sprite_index) {
 			case spr_player_mach1:

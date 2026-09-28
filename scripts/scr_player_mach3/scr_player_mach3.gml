@@ -88,6 +88,7 @@ function scr_player_mach3() {
 	
 	scr_do_grab();
 	scr_do_taunt();
+	scr_afterimageMach3();
 	switch (sprite_index) {
 		case spr_player_rollgetup:
 			image_speed = 0.35;

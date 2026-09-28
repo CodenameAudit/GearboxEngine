@@ -16,6 +16,7 @@ tauntEffect = 0;
 chargeEffect = 0;
 dustEffect = 0;
 dashEffect = 0;
+mach3Effect = 0;
 savedTRoom = -4;
 savedTDoor = -4;
 depth = -7;

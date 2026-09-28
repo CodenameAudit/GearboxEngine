@@ -15,6 +15,7 @@ if (state == states.mach3) {
 }
 if (state == states.freefall && freefallSmash >= 10) {
 	draw_sprite_ext(spr_superslameffect, chargeEffect, x, y, xscale, image_yscale, 0, c_white, 1);
+	scr_afterimageMach3();
 	
 	if (chargeEffect < 3)
 		chargeEffect += 0.5;
