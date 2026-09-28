@@ -106,5 +106,6 @@ function scr_player_uppercut() {
 	if (animationEnd() && spr_player_breakdanceuppercut)
 		sprite_index = spr_player_breakdanceuppercutend;
 	
+	scr_afterimageMach3();
 	image_speed = 0.35;
 }

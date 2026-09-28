@@ -1,5 +1,6 @@
 function scr_init() {
 	global.collect = 0;
+	global.escape = false;
 	global.savedSprite = -4;
 	global.key = false;
 	global.saveList = ds_list_create();
