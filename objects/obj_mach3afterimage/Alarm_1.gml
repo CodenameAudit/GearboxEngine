@@ -1,1 +1,1 @@
-obj_mach3afterimage.image_alpha = 0;
+image_alpha = 0;

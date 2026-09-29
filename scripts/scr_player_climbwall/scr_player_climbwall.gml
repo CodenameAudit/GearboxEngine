@@ -33,6 +33,13 @@ function scr_player_climbwall(){
 		dustEffect = 10;	
 	}
 	
+	if place_meeting(x, y + vsp, obj_solid) {
+		sprite_index = spr_player_superjumpland;
+		image_index = 0;
+		state = states.verticalSlam;
+		exit;
+	}
+	
 	if (!keyboard_check_direct(vk_shift)) {
 		state = states.jump;
 		sprite_index = spr_player_fall;

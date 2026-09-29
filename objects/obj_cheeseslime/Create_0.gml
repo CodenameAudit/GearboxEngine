@@ -8,7 +8,9 @@ landSprite = spr_null;
 turnSprite = spr_slimemove;
 stunSprite = spr_null;
 grabbedSprite = spr_null;
-scaredSprite = spr_null;
+scaredSprite = spr_slime_scared;
+deadSprite = spr_slimedead
+scareBuffer = 0;
 sprite_index = spr_null;
 mask_index = spr_player_mask;
 scr_collision_init();

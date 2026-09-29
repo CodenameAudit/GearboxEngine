@@ -3,7 +3,7 @@ function scr_player_mach3() {
 	var _maxcrazyspeed = 20;
 	var _accel = 0.025;
 	var _crazyAccel = 0.1;
-	var _specialSpr = [spr_player_mach3jump, spr_player_rollgetup] 
+	var _specialSpr = [spr_player_mach3jump, spr_player_rollgetup, spr_player_Sjumpcancel] 
 	
 	scr_movePlayer();
 	scr_jumpStopPlayer();
@@ -49,6 +49,13 @@ function scr_player_mach3() {
 		vsp = -6;
 		state = states.bump;
 		exit;
+	}
+	
+	if (keyboard_check_direct(vk_up) && grounded) {
+		state = states.superjumpPrep;
+		sprite_index = spr_player_superjumpprep;
+		image_index = 0;
+		exit; 
 	}
 	
 	if (keyboard_check_direct(vk_down)) {

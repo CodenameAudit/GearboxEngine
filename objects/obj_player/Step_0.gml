@@ -70,6 +70,18 @@ switch (state) {
 	case states.freefallland:
 		scr_player_freefallland();
 		break;
+	
+	case states.superjumpPrep:
+		scr_player_SjumpPrep();
+		break;
+	
+	case states.superjump:
+		scr_player_Sjump();
+		break;
+	
+	case states.verticalSlam:
+		scr_player_SjumpCancel();
+		break;
 }
 
 var _crouchStates = [states.crouch, states.tumble]
@@ -78,8 +90,13 @@ if (array_contains(_crouchStates, state))
 else mask_index = spr_player_mask;	
 
 switch (state) {
+	case states.superjump:
+		grav = 0;
+		break;
+		
 	default:
 		grav = 0.5;
+		break;
 }
 
 canJump = ((coyoteTimer != 0 || grounded) && vsp > 0) ? true : false;
@@ -90,9 +107,6 @@ if (grounded) {
 
 if (coyoteTimer > 0 && !grounded)
     coyoteTimer--;
-
-if (y > room_height)
-	scr_gotoRoom(room);
 
 if (ladderBuffer != 0)
 	ladderBuffer--;	

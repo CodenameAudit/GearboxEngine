@@ -23,7 +23,10 @@ function scr_init() {
 		taunt,
 		crouch,
 		freefall,
-		freefallland
+		freefallland,
+		superjumpPrep,
+		superjump,
+		verticalSlam
 	}
 	
 	enum enemyStates {

@@ -1,6 +1,6 @@
 switch (state) {
 	case enemyStates.idle:
-		//idlehere
+		scr_enemy_idle();
 		break;
 	
 	case enemyStates.walk:
@@ -8,7 +8,7 @@ switch (state) {
 		break;
 	
 	case enemyStates.scared:
-		//scaredhere
+		scr_enemy_scared();
 		break;
 }
 
