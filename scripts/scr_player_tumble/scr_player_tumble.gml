@@ -22,6 +22,7 @@ function scr_player_tumble() {
 	if (place_meeting(x + hsp, y - 10, obj_solid)) {
 		sprite_index = spr_player_wallsplat;
 		image_index = 0;
+		vsp = 0;
 		state = states.bump;
 		exit;
 	}
@@ -61,5 +62,6 @@ function scr_player_tumble() {
 	if (crouchslipbuffer != 0)
 		crouchslipbuffer--;	
 	
+	scr_afterimageController("blur");
 	image_speed = abs(movespeed) / 15;
 }

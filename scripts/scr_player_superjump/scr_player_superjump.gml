@@ -13,12 +13,13 @@ function scr_player_SjumpPrep() {
 			sprite_index = spr_player_superjump;
 			image_index = 0;
 			state = states.superjump;
-			vsp = -17;
+			vsp = -15;
+			sjumpVSP = vsp;
 			exit; 
 		}
 	
 		if (abs(hsp) != 0)
-			sprite_index = spr_player_superjumpleft;
+			sprite_index = spr_player_superjumpmove;
 		else sprite_index = spr_player_superjumppreplight;
 	}
 	else {
@@ -32,14 +33,18 @@ function scr_player_SjumpPrep() {
 }
 
 function scr_player_Sjump() {
-	var _nonCancelSpr = [spr_player_Sjumpcancelstart]
+	var _nonCancelSpr = [spr_player_Sjumpcancelstart, spr_player_presentbox]
+	
 	scr_movePlayer();
 	hsp = 0;
-	vsp -= 0.1;
 	movespeed = 0;
+	vsp = sjumpVSP;
+	sjumpVSP -= 0.1;
 	
-	if (sprite_index == spr_player_Sjumpcancelstart)
+	if (sprite_index == spr_player_Sjumpcancelstart) {
 		vsp = 0;
+		sjumpVSP = 0;
+	}
 	
 	if (keyboard_check_pressed(ord("X")) && !array_contains(_nonCancelSpr, sprite_index)) {
 		sprite_index = spr_player_Sjumpcancelstart
@@ -57,14 +62,15 @@ function scr_player_Sjump() {
 		exit;
 	}
 	
-	if place_meeting(x, y + vsp, obj_solid) {
+	if (place_meeting(x, y + vsp, obj_solid) && !place_meeting(x - xscale, y + abs(vsp), par_destroyables)) {
 		sprite_index = spr_player_superjumpland;
 		image_index = 0;
+		sjumpVSP = 0;
 		state = states.verticalSlam;
 		exit;
 	}
 	
-	scr_afterimageMach3();
+	scr_afterimageController("mach3");
 	image_speed = 0.5;
 }
 

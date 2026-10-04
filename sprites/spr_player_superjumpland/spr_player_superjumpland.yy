@@ -29,7 +29,7 @@
   ],
   "name":"spr_player_superjumpland",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Player",
     "path":"folders/Sprites/Player.yy",
@@ -100,7 +100,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":50,
-    "yorigin":50,
+    "yorigin":16,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

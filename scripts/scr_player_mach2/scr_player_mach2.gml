@@ -1,11 +1,11 @@
 function scr_player_mach2() {
 	var _maxmovespeed = 12;
-	var _slopeacel = 0.1;
 	var _accel = 0.1;
-	var _sprBonus = [spr_player_secondjump2, spr_player_walljumpend, spr_player_longjumpend]
+	var _aerialSprite = [spr_player_secondjump1, spr_player_secondjump2, spr_player_walljumpstart, spr_player_walljumpend, spr_player_longjump, spr_player_longjumpend]
 	
 	scr_movePlayer();
 	scr_jumpStopPlayer();
+	scr_accelerationPlayer(0.1, 0.2);
 	hsp = movespeed * xscale;
 
 	if (grounded) {
@@ -24,6 +24,7 @@ function scr_player_mach2() {
 		vsp = -11;
 		sprite_index = spr_player_secondjump1;
 		image_index = 0;
+		exit;
 	}
 	
 	if ((!grounded && place_meeting(x + hsp, y, obj_solid)) || (grounded && place_meeting(x, y + 16, obj_slope) && place_meeting(x + hsp, y - 16, obj_solid))) {
@@ -62,7 +63,8 @@ function scr_player_mach2() {
 		exit;
 	}
 	
-	if (grounded && array_contains(_sprBonus, sprite_index)) {
+	
+	if (grounded && array_contains(_aerialSprite, sprite_index)) {
 		if (abs(hsp) > 8)
 			sprite_index = spr_player_mach2;
 		else sprite_index = spr_player_mach1;
@@ -75,7 +77,7 @@ function scr_player_mach2() {
 	
 	scr_do_grab();
 	scr_do_taunt();
-	scr_afterimageMach3();
+	scr_afterimageController("mach3");
 	if (animationEnd()) {
 		switch (sprite_index) {
 			case spr_player_mach1:

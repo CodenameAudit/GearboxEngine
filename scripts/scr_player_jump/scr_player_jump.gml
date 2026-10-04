@@ -1,5 +1,5 @@
 function scr_player_jump() {
-	var _spriteShit = [spr_player_jump, spr_player_suplexcancel]
+	var _aerialStart = [spr_player_jump, spr_player_suplexcancel]
 	
 	scr_movePlayer();
 	scr_jumpStopPlayer();
@@ -14,17 +14,6 @@ function scr_player_jump() {
 		xscale = move;
 	}
 	
-	if (grounded) {
-		state = states.normal;
-		sprite_index = (move != 0) ? spr_player_land2 : spr_player_land
-		
-		with (instance_create_depth(x, y, 0, obj_dusteffect))
-			sprite_index = spr_landcloud;
-			
-		image_index = 0;
-		exit;
-	}
-	
 	if (keyboard_check_pressed(vk_down)) {		
 		sprite_index = spr_player_bodyslamstart;
 		image_index = 0;
@@ -34,7 +23,18 @@ function scr_player_jump() {
 		exit;
 	}
 	
-	if (array_contains(_spriteShit, sprite_index) && animationEnd())
+	if (grounded) {
+		sprite_index = (move != 0) ? spr_player_land2 : spr_player_land
+		
+		with (instance_create_depth(x, y, 0, obj_dusteffect))
+			sprite_index = spr_landcloud;
+			
+		image_index = 0;
+		state = states.normal;
+		exit;
+	}
+	
+	if (array_contains(_aerialStart, sprite_index) && animationEnd())
 		sprite_index = spr_player_fall;
 	
 	scr_do_grab();

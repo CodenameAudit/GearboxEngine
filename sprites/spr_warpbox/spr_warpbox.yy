@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":1,
   "parent":{
-    "name":"group1",
-    "path":"folders/Sprites/Structure/group1.yy",
+    "name":"Warps",
+    "path":"folders/Sprites/Structure/Warps.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

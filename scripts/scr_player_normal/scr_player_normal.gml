@@ -1,6 +1,7 @@
 function scr_player_normal() {
+	var _landSprites = [spr_player_land, spr_player_land2];
 	scr_movePlayer();
-	hsp = movespeed * xscale;
+	hsp = (movespeed * xscale);
 	
 	if (move != 0)
 		movespeed = approach(movespeed, 8, 0.5);
@@ -22,17 +23,10 @@ function scr_player_normal() {
 			
 		exit;
 	}
-	else if !grounded {
+	else if (!grounded) {
 		state = states.jump;
 		sprite_index = spr_player_fall;
 		image_index = 0;
-		exit;
-	}
-	
-	if (keyboard_check_pressed(vk_down) && grounded) {		
-		sprite_index = spr_player_crouchstart;
-		image_index = 0;
-		state = states.crouch;
 		exit;
 	}
 	
@@ -46,6 +40,13 @@ function scr_player_normal() {
 		exit;
 	}
 	
+	if (keyboard_check_pressed(vk_down) && grounded) {		
+		sprite_index = spr_player_crouchstart;
+		image_index = 0;
+		state = states.crouch;
+		exit;
+	}
+	
 	if (sprite_index = spr_player_move && dustEffect > 0)
 		dustEffect--;
 	else if (dustEffect == 0) {
@@ -53,13 +54,13 @@ function scr_player_normal() {
 		dustEffect = 12;	
 	}
 	
-	if (sprite_index != spr_player_land && sprite_index != spr_player_land2) {
+	if (!array_contains(_landSprites, sprite_index)) {
 		if (abs(hsp) != 0)
 			sprite_index = spr_player_move;
 		else sprite_index = spr_player_idle;
 	}
 	
-	if ((sprite_index == spr_player_land || sprite_index == spr_player_land2) && animationEnd())
+	if (array_contains(_landSprites, sprite_index) && animationEnd())
 		sprite_index = spr_player_idle
 	
 	scr_do_grab();

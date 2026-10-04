@@ -4,7 +4,7 @@ else if (fadeClose && fadeAlpha > 0)
 	fadeAlpha -= 0.1; 
 
 if (fadeAlpha == 1 && fadeStart = true) {
-	scr_gotoRoom(targetRoom);
+	room_goto(targetRoom);
 }
 else if (fadeAlpha == 0 && fadeClose = true) {
 	fadeClose = false;

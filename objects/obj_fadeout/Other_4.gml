@@ -3,6 +3,7 @@ if (fadeStart && !fadeClose && room != rm_init) {
 		state = other.savedState;
 		movespeed = other.savedMovespeed;
 		xscale = other.savedXscale;
+		
 		targetDoor = other.targetDoor
 		switch (obj_fadeout.targetDoor) {
 		case "A":
@@ -46,7 +47,14 @@ if (fadeStart && !fadeClose && room != rm_init) {
 				other.y = y-14;		
 			}
 			break;
-	}
+		
+		case "S":
+			with (obj_secretExit) {
+				other.x = x+16;
+				other.y = y-14;	
+			}
+			break;
+		}
 	}
 	fadeStart = false;
 	fadeClose = true;

@@ -26,6 +26,17 @@ function scr_do_taunt() {
 	}
 }
 
+function scr_accelerationPlayer(_accel, _decel) {
+	with (instance_place(x, y + 1, obj_slope)) {
+		if (sign(image_xscale) == -sign(other.xscale)) {
+			if (abs(image_yscale) < abs(image_xscale))
+               other.movespeed += _decel;
+            else
+                other.movespeed += _accel;
+		}
+	}
+}
+
 function scr_do_grab() {
 	if (keyboard_check_pressed(ord("X"))) {
 		if (!keyboard_check_direct(vk_up)) {

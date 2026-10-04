@@ -1,9 +1,11 @@
 function scr_init() {
 	global.collect = 0;
 	global.escape = false;
-	global.savedSprite = -4;
 	global.key = false;
+	global.secretRoom = false;
+	global.secretExit = false;
 	global.saveList = ds_list_create();
+	global.debugMode = true;
 	
 	enum states {
 		normal,
@@ -32,7 +34,8 @@ function scr_init() {
 	enum enemyStates {
 		idle,
 		walk,
-		scared
+		scared,
+		stunned
 	}
 
 	with (obj_player) {

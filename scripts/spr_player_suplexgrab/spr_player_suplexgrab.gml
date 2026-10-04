@@ -82,6 +82,7 @@ function spr_player_suplexgrab(){
 	if (animationEnd() && sprite_index == spr_player_suplexgrabjumpstart)
 		sprite_index = spr_player_suplexgrabjump;
 	
+	scr_afterimageController("blur"); 
 	image_speed = 0.35;
 }
 
@@ -106,6 +107,6 @@ function scr_player_uppercut() {
 	if (animationEnd() && spr_player_breakdanceuppercut)
 		sprite_index = spr_player_breakdanceuppercutend;
 	
-	scr_afterimageMach3();
+	scr_afterimageController("mach3");
 	image_speed = 0.35;
 }

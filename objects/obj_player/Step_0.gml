@@ -90,10 +90,6 @@ if (array_contains(_crouchStates, state))
 else mask_index = spr_player_mask;	
 
 switch (state) {
-	case states.superjump:
-		grav = 0;
-		break;
-		
 	default:
 		grav = 0.5;
 		break;
@@ -112,4 +108,5 @@ if (ladderBuffer != 0)
 	ladderBuffer--;	
 
 image_xscale = xscale;
+image_yscale = yscale;
 scr_collision();

@@ -1,5 +1,6 @@
 function scr_player_crouch() {
-	var _nonwdawd = [spr_player_crouchjump, spr_player_crouchfall, spr_player_crouchstart]
+	var _nonNormalSprites = [spr_player_crouchjump, spr_player_crouchfall, spr_player_crouchstart];
+	
 	scr_movePlayer();
 	scr_jumpStopPlayer();
 	hsp = movespeed * xscale;
@@ -10,14 +11,13 @@ function scr_player_crouch() {
 	}
 	else movespeed = 0;
 	
-	if (keyboard_check_pressed(ord("Z")) && !place_meeting(x, y - 32, obj_solid) && canJump) {
-		vsp = -8;
+	if (keyboard_check_pressed(ord("Z")) && !place_meeting(x, y - 16, obj_solid) && canJump) {
 		sprite_index = spr_player_crouchjump;
 		image_index = 0;
-		exit;
+		vsp = -8;
 	}
 	
-	if (!keyboard_check_direct(vk_down) && !place_meeting(x, y - 32, obj_solid) && grounded) {		
+	if (!keyboard_check_direct(vk_down) && !place_meeting(x, y - 16, obj_solid) && grounded) {		
 		sprite_index = spr_player_idle;
 		image_index = 0;
 		state = states.normal;
@@ -30,7 +30,7 @@ function scr_player_crouch() {
 	if (grounded && sprite_index == spr_player_crouchfall)
 		sprite_index = spr_player_crouch;
 	
-	if (!array_contains(_nonwdawd, sprite_index)) {
+	if (!array_contains(_nonNormalSprites, sprite_index)) {
 		if (abs(hsp) != 0)
 			sprite_index = spr_player_crawl;
 		else sprite_index = spr_player_crouch;

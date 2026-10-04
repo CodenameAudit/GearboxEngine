@@ -3,10 +3,11 @@ function scr_player_mach3() {
 	var _maxcrazyspeed = 20;
 	var _accel = 0.025;
 	var _crazyAccel = 0.1;
-	var _specialSpr = [spr_player_mach3jump, spr_player_rollgetup, spr_player_Sjumpcancel] 
+	var _specialSpr = [spr_player_mach3jump, spr_player_mach3hit, spr_player_rollgetup, spr_player_Sjumpcancel] 
 	
 	scr_movePlayer();
 	scr_jumpStopPlayer();
+	scr_accelerationPlayer(0.1, 0.2);
 	hsp = movespeed * xscale;
 	
 	if (grounded) {
@@ -71,6 +72,23 @@ function scr_player_mach3() {
 		exit;
 	}
 	
+	if (sprite_index == spr_player_crazyrun) {
+		if (dustEffect > 0)
+				dustEffect--;
+		else {
+			with (instance_create_depth(x + (xscale * 10), y, 0, obj_dusteffect)) {
+				image_xscale = other.xscale;
+				sprite_index = spr_flamecloud;
+			}
+			dustEffect = 10;	
+		}
+		
+		if (!instance_exists(obj_crazyruneffect)) {
+			with (instance_create_depth(x, y, 0, obj_crazyruneffect))
+				image_xscale = other.xscale;
+		}
+	}
+	
 	if (!instance_exists(obj_dashcloud) && grounded) {
 		with (instance_create_depth(x, y, 0, obj_dashcloud))
 			image_xscale = other.xscale;
@@ -90,12 +108,15 @@ function scr_player_mach3() {
 		exit;
 	}
 
-	if (array_contains(_specialSpr, sprite_index) && animationEnd())
+	if (array_contains(_specialSpr, sprite_index) && sprite_index != spr_player_Sjumpcancel && animationEnd())
+		sprite_index = spr_player_mach3;
+	
+	if (grounded && sprite_index == spr_player_Sjumpcancel)
 		sprite_index = spr_player_mach3;
 	
 	scr_do_grab();
 	scr_do_taunt();
-	scr_afterimageMach3();
+	scr_afterimageController("mach3");
 	switch (sprite_index) {
 		case spr_player_rollgetup:
 			image_speed = 0.35;

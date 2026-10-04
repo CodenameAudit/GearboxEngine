@@ -2,15 +2,14 @@ function scr_player_freefall(){
 	scr_movePlayer();
 	hsp = movespeed * xscale;
 	
-	if (grounded && !place_meeting(x + xscale, y + abs(vsp), par_destroyables)) {
-		//Landed
+	if (grounded && !place_meeting(x + xscale, y + 1, par_destroyables)) {
 		if (place_meeting(x, y + abs(vsp), obj_slope)) {
 			state = states.tumble;
 			sprite_index = spr_player_machroll;
 			with (instance_place(x, y + 1, obj_slope))
 					other.xscale = -sign(image_xscale);
 			
-			if (vsp >= 10)
+			if (freefallSmash >= 20)
 				movespeed = 12
 			else movespeed = 8
 			
@@ -20,6 +19,10 @@ function scr_player_freefall(){
 		else {
 			sprite_index = (sprite_index == spr_player_poundcancel1) ? spr_player_poundcancel2 : spr_player_bodyslamland;
 			image_index = 0;
+			
+			with (instance_create_depth(x, y, 0, obj_dusteffect))
+				sprite_index = spr_groundpoundeffect;
+			
 			state = states.freefallland;
 			exit;
 		}
@@ -36,7 +39,16 @@ function scr_player_freefall(){
 		if (place_meeting(x + move, y, obj_solid))
 			movespeed = 0;
 		
-		if (vsp >= 2) vsp += 0.5;
+		if (vsp >= 2) {
+			if (dustEffect > 0)
+				dustEffect--;
+			else {
+				instance_create_depth(x + (xscale * 10), y, 0, obj_dusteffect);
+				dustEffect = 10;	
+			}
+	
+			vsp += 0.5;
+		}
 		
 		if (vsp > 0)
 	        freefallSmash++;
@@ -44,6 +56,7 @@ function scr_player_freefall(){
 		if (animationEnd() && sprite_index == spr_player_bodyslamstart)
 			sprite_index = spr_player_bodyslamfall;
 	}
+	scr_afterimageController("blur");
 	image_speed = 0.35;
 }
 

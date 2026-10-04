@@ -5,7 +5,7 @@ with (obj_player) {
 	if ((place_meeting(x + (movespeed * xscale), y, other)) && array_contains(_destroyHorizontalStates, state)) {
 		instance_destroy(other)
 	}
-	else if ((place_meeting(x, y + vsp, other)) && array_contains(_destroyVerticalStates, state)) {
+	else if ((instance_place(x, y + (vsp), other)) && array_contains(_destroyVerticalStates, state)) {
 		instance_destroy(other)
 	}
 }
